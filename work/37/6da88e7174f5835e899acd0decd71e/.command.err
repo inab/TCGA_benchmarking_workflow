@@ -1,0 +1,2 @@
+docker: Error response from daemon: OCI runtime create failed: container_linux.go:348: starting container process caused "exec: \"-i\": executable file not found in $PATH": unknown.
+time="2019-01-28T10:54:38+01:00" level=error msg="error waiting for container: context canceled"

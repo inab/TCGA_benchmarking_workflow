@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/app/manage_assessment_data.py", line 406, in <module>
+    main(args)
+  File "/app/manage_assessment_data.py", line 28, in main
+    cancer_types_part = get_cancer_types(participant_dir)
+  File "/app/manage_assessment_data.py", line 42, in get_cancer_types
+    cancer_types.setdefault(result['cancer_type'],[]).append((result['toolname'],abs_result_file))
+TypeError: list indices must be integers, not str

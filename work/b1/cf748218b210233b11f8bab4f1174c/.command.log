@@ -1,0 +1,8 @@
+pip (8.1.1)
+scour (0.32)
+setuptools (20.7.0)
+six (1.10.0)
+wheel (0.29.0)
+You are using pip version 8.1.1, however version 19.0.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+python: can't open file 'validation.py': [Errno 2] No such file or directory

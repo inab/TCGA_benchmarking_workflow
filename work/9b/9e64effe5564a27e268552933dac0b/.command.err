@@ -1,0 +1,3 @@
+usage: manage_assessment_data.py [-h] -b BENCHMARK_DATA -c CANCER_TYPES
+                                 [CANCER_TYPES ...] -p PARTICIPANT_NAME
+manage_assessment_data.py: error: argument -c/--cancer_types is required

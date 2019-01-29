@@ -1,0 +1,2 @@
+docker: Error response from daemon: OCI runtime create failed: container_linux.go:348: starting container process caused "exec: \"/bin/bash\": stat /bin/bash: no such file or directory": unknown.
+time="2019-01-29T10:45:24+01:00" level=error msg="error waiting for container: context canceled"

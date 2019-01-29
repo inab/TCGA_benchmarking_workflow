@@ -1,0 +1,78 @@
+Jan-29 16:05:28.190 [main] DEBUG nextflow.cli.Launcher - $> /home/jgarrayo/bin/nextflow run main.nf
+Jan-29 16:05:28.309 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 18.10.1
+Jan-29 16:05:28.372 [main] INFO  nextflow.cli.CmdRun - Launching `main.nf` [marvelous_bardeen] - revision: 22f1c9c997
+Jan-29 16:05:28.382 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /home/jgarrayo/nextflow_tutorial/TCGA_nextflow/nextflow.config
+Jan-29 16:05:28.383 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/jgarrayo/nextflow_tutorial/TCGA_nextflow/nextflow.config
+Jan-29 16:05:28.399 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Jan-29 16:05:28.696 [main] DEBUG nextflow.Session - Session uuid: a204ebe8-bb51-4600-9022-80d94f49a015
+Jan-29 16:05:28.696 [main] DEBUG nextflow.Session - Run name: marvelous_bardeen
+Jan-29 16:05:28.696 [main] DEBUG nextflow.Session - Executor pool size: 8
+Jan-29 16:05:28.706 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 18.10.1 build 5003
+  Modified: 24-10-2018 14:03 UTC (16:03 CEST)
+  System: Linux 4.4.0-141-generic
+  Runtime: Groovy 2.5.3 on OpenJDK 64-Bit Server VM 1.8.0_191-8u191-b12-0ubuntu0.16.04.1-b12
+  Encoding: UTF-8 (UTF-8)
+  Process: 15708@bsclife020 [84.88.51.235]
+  CPUs: 8 - Mem: 62.8 GB (38 GB) - Swap: 0 (0)
+Jan-29 16:05:28.726 [main] DEBUG nextflow.Session - Work-dir: /home/jgarrayo/nextflow_tutorial/TCGA_nextflow/work [ext2/ext3]
+Jan-29 16:05:28.727 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /home/jgarrayo/nextflow_tutorial/TCGA_nextflow/bin
+Jan-29 16:05:29.013 [main] DEBUG nextflow.Session - Session start invoked
+Jan-29 16:05:29.023 [main] DEBUG nextflow.processor.TaskDispatcher - Dispatcher > start
+Jan-29 16:05:29.025 [main] DEBUG nextflow.script.ScriptRunner - > Script parsing
+Jan-29 16:05:29.314 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Jan-29 16:05:29.329 [main] INFO  nextflow.Nextflow -   P I P E L I N E    
+      =============================
+      input file: /home/jgarrayo/nextflow_tutorial/TCGA_nextflow/TCGA_full_data/All_Together.txt
+      public reference directory : /home/jgarrayo/nextflow_tutorial/TCGA_nextflow/TCGA_full_data/public_ref
+      tool name : my_gene_predictor
+      metrics reference datasets: /home/jgarrayo/nextflow_tutorial/TCGA_nextflow/TCGA_full_data/metrics_ref_datasets
+selected cancer types: ACC BRCA
+benchmark data: /home/jgarrayo/nextflow_tutorial/TCGA_nextflow/TCGA_full_data/data
+results directory: out
+
+Jan-29 16:05:29.409 [main] DEBUG nextflow.util.CacheHelper - Config settings `withName:validation` matches process validation
+Jan-29 16:05:29.411 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Jan-29 16:05:29.411 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Jan-29 16:05:29.416 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Jan-29 16:05:29.418 [main] INFO  nextflow.executor.Executor - [warm up] executor > local
+Jan-29 16:05:29.420 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=8; memory=62.8 GB; capacity=8; pollInterval=100ms; dumpInterval=5m
+Jan-29 16:05:29.423 [main] DEBUG nextflow.processor.TaskDispatcher - Starting monitor: LocalPollingMonitor
+Jan-29 16:05:29.423 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Jan-29 16:05:29.425 [main] DEBUG nextflow.executor.Executor - Invoke register for executor: local
+Jan-29 16:05:29.455 [main] DEBUG nextflow.Session - >>> barrier register (process: validation)
+Jan-29 16:05:29.458 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > validation -- maxForks: 8
+Jan-29 16:05:29.482 [main] DEBUG nextflow.util.CacheHelper - Config settings `withName:compute_metrics` matches process compute_metrics
+Jan-29 16:05:29.483 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Jan-29 16:05:29.483 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Jan-29 16:05:29.483 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Jan-29 16:05:29.484 [main] DEBUG nextflow.Session - >>> barrier register (process: compute_metrics)
+Jan-29 16:05:29.486 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > compute_metrics -- maxForks: 8
+Jan-29 16:05:29.489 [main] DEBUG nextflow.util.CacheHelper - Config settings `withName:manage_assessment_data` matches process manage_assessment_data
+Jan-29 16:05:29.492 [main] DEBUG nextflow.processor.ProcessFactory - << taskConfig executor: null
+Jan-29 16:05:29.492 [main] DEBUG nextflow.processor.ProcessFactory - >> processorType: 'local'
+Jan-29 16:05:29.492 [main] DEBUG nextflow.executor.Executor - Initializing executor: local
+Jan-29 16:05:29.493 [main] DEBUG nextflow.Session - >>> barrier register (process: manage_assessment_data)
+Jan-29 16:05:29.494 [main] DEBUG nextflow.processor.TaskProcessor - Creating operator > manage_assessment_data -- maxForks: 8
+Jan-29 16:05:29.496 [main] DEBUG nextflow.script.ScriptRunner - > Await termination 
+Jan-29 16:05:29.496 [main] DEBUG nextflow.Session - Session await
+Jan-29 16:05:29.556 [Actor Thread 5] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /home/jgarrayo/nextflow_tutorial/TCGA_nextflow/out -- Cause: java.nio.file.NoSuchFileException: /home/jgarrayo/nextflow_tutorial/TCGA_nextflow/out
+Jan-29 16:05:29.556 [Actor Thread 8] DEBUG nextflow.util.CacheHelper - Unable to get file attributes file: /home/jgarrayo/nextflow_tutorial/TCGA_nextflow/out -- Cause: java.nio.file.NoSuchFileException: /home/jgarrayo/nextflow_tutorial/TCGA_nextflow/out
+Jan-29 16:05:29.616 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jan-29 16:05:29.619 [Task submitter] INFO  nextflow.Session - [25/e4ae75] Submitted process > manage_assessment_data (1)
+Jan-29 16:05:29.628 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jan-29 16:05:29.628 [Task submitter] INFO  nextflow.Session - [3d/14f1f2] Submitted process > validation (1)
+Jan-29 16:05:29.635 [Task submitter] DEBUG nextflow.executor.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jan-29 16:05:29.639 [Task submitter] INFO  nextflow.Session - [f5/41d99b] Submitted process > compute_metrics (1)
+Jan-29 16:05:31.125 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: compute_metrics (1); status: COMPLETED; exit: 0; error: -; workDir: /home/jgarrayo/nextflow_tutorial/TCGA_nextflow/work/f5/41d99b6001e18dbb9170114cb2886e]
+Jan-29 16:05:31.131 [Actor Thread 3] DEBUG nextflow.Session - <<< barrier arrive (process: compute_metrics)
+Jan-29 16:05:32.161 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 3; name: manage_assessment_data (1); status: COMPLETED; exit: 0; error: -; workDir: /home/jgarrayo/nextflow_tutorial/TCGA_nextflow/work/25/e4ae7585ae94b79e8d1db5e90451c6]
+Jan-29 16:05:32.162 [Actor Thread 3] DEBUG nextflow.Session - <<< barrier arrive (process: manage_assessment_data)
+Jan-29 16:05:45.318 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: validation (1); status: COMPLETED; exit: 0; error: -; workDir: /home/jgarrayo/nextflow_tutorial/TCGA_nextflow/work/3d/14f1f26e56cafcb4ec4b9f5d8d2c8e]
+Jan-29 16:05:45.319 [Actor Thread 3] DEBUG nextflow.Session - <<< barrier arrive (process: validation)
+Jan-29 16:05:45.319 [main] DEBUG nextflow.Session - Session await > all process finished
+Jan-29 16:05:45.319 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local)
+Jan-29 16:05:45.319 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Jan-29 16:05:45.325 [main] DEBUG nextflow.trace.StatsObserver - Workflow completed > WorkflowStats[succeedCount=3; failedCount=0; ignoredCount=0; cachedCount=0; succeedDuration=19.5s; failedDuration=0ms; cachedDuration=0ms]
+Jan-29 16:05:45.330 [main] DEBUG nextflow.CacheDB - Closing CacheDB done
+Jan-29 16:05:45.420 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

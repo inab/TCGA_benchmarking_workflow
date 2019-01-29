@@ -1,0 +1,5 @@
+/home/jgarrayo/nextflow_tutorial/TCGA_nextflow/work/6b/4af7a5c2f47072fb3845a2e4f858e0/.command.stub: line 45: ps: command not found
+/home/jgarrayo/nextflow_tutorial/TCGA_nextflow/work/6b/4af7a5c2f47072fb3845a2e4f858e0/.command.stub: line 45: ps: command not found
+The directory '/.cache/pip/http' or its parent directory is not owned by the current user and the cache has been disabled. Please check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+The directory '/.cache/pip' or its parent directory is not owned by the current user and caching wheels has been disabled. check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
+Could not open requirements file: [Errno 2] No such file or directory: 'requirements.txt'

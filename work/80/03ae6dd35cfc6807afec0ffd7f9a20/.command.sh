@@ -1,0 +1,2 @@
+#!/bin/bash -ue
+python /app/compute_metrics.py -i All_Together.txt -c ACC BRCA -m metrics_ref_datasets -p my_gene_predictor -o out
