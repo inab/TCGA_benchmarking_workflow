@@ -1,8 +1,0 @@
-Traceback (most recent call last):
-  File "/app/compute_metrics.py", line 95, in <module>
-    main(args)
-  File "/app/compute_metrics.py", line 21, in main
-    os.makedirs(out_dir)
-  File "/usr/local/lib/python2.7/os.py", line 157, in makedirs
-    mkdir(name, mode)
-OSError: [Errno 17] File exists: 'out'

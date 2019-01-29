@@ -1,7 +1,0 @@
-/home/jgarrayo/nextflow_tutorial/TCGA_nextflow/work/8e/2ffc3d1869eba5d268e62dc1946372/.command.stub: line 45: ps: command not found
-The directory '/.cache/pip/http' or its parent directory is not owned by the current user and the cache has been disabled. Please check the permissions and owner of that directory. If executing pip with sudo, you may want sudo's -H flag.
-/home/jgarrayo/nextflow_tutorial/TCGA_nextflow/work/8e/2ffc3d1869eba5d268e62dc1946372/.command.stub: line 45: ps: command not found
-/home/jgarrayo/nextflow_tutorial/TCGA_nextflow/work/8e/2ffc3d1869eba5d268e62dc1946372/.command.stub: line 45: ps: command not found
-You are using pip version 18.0, however version 19.0.1 is available.
-You should consider upgrading via the 'pip install --upgrade pip' command.
-python: can't open file 'validation.py': [Errno 2] No such file or directory

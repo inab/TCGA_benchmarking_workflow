@@ -1,1 +1,0 @@
-/home/jgarrayo/nextflow_tutorial/TCGA_nextflow/TCGA_full_data/All_Together.txt
