@@ -38,10 +38,16 @@ result = file(params.results_dir)
 
 process validation {
 
+	// validExitStatus 0,1
+	tag "Validating input file format"
+
 	input:
 	file input_file
 	file ref_dir 
 
+	output:
+	val task.exitStatus into EXIT_STAT
+	
 	"""
 	python /app/validation.py -i $input_file -r $ref_dir
 	"""
@@ -50,12 +56,18 @@ process validation {
 
 process compute_metrics {
 
+	tag "Computing benchmark metrics for submitted data"
+
 	input:
+	val file_validated from EXIT_STAT
 	file input_file
 	val cancer_types
 	file gold_standards_dir
 	val tool_name
 	val result
+
+	when:
+	file_validated == 0
 
 	output:
 	val result into PARTICIPANT_DATA
@@ -67,6 +79,8 @@ process compute_metrics {
 }
 
 process manage_assessment_data {
+
+	tag "Performing benchmark assessment and building plots"
 
 	input:
 	file benchmark_data
