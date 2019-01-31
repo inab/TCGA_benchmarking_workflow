@@ -1,17 +1,8 @@
 #!/usr/bin/env nextflow
 
-// default parameter values
-
-params.predictionsFile = "$baseDir/TCGA_full_data/All_Together.txt"
-params.public_ref_dir = "$baseDir/TCGA_full_data/public_ref"
-params.participant_name = "my_gene_predictor"
-params.metrics_ref_dir = "$baseDir/TCGA_full_data/metrics_ref_datasets"
-params.cancer_types  = "ACC BRCA"
-params.assess_dir = "$baseDir/TCGA_full_data/data"
-params.results_dir = "out"
 
 log.info """\
-		   P I P E L I N E    
+		   TCGA CANCER DRIVER GENES BENCHMARKING PIPELINE    
          =============================
          input file: ${params.predictionsFile}
          public reference directory : ${params.public_ref_dir}
