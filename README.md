@@ -27,4 +27,4 @@ In order to use the workflow you need to:
 * Build locally the three Docker images found in [this repository](https://github.com/inab/TCGA_visualizer), with the build.sh script
 * Run it just using *'nextflow run main.nf'*
 
-Default input parameters can be specified in the [config](https://github.com/javi-gv94/TCGA_nf_workflow/blob/master/nextflow.config) file
+Default input parameters and Docker containers to use can be specified in the [config](https://github.com/javi-gv94/TCGA_nf_workflow/blob/master/nextflow.config) file
