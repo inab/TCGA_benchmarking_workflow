@@ -25,6 +25,26 @@ The workflow takes an input file with Cancer Driver Genes predictions (i.e. the 
 In order to use the workflow you need to:
 * Install [Nextflow](https://www.nextflow.io/)
 * Clone [this repository](https://github.com/inab/TCGA_visualizer) in a separate directory, and build locally the three Docker images found in it, running the `build.sh` script within that repo.
-* Run it just using *'nextflow run main.nf'*
+* Run it just using *`nextflow run main.nf`*
+Arguments specifications:
+```
+	    Usage:
+	    Run the pipeline with default parameters:
+	    nextflow run main.nf
 
+	    Run with user parameters:
+ 	    nextflow run main.nf --predictionsFile {driver.genes.file} --public_ref_dir {validation.reference.file} --participant_name {tool.name} --metrics_ref_dir {gold.standards.dir} --cancer_types {analyzed.cancer.types} --assess_dir {benchmark.data.dir} --results_dir {output.dir}
+
+	    Mandatory arguments:
+                --predictionsFile		List of cancer genes prediction
+                --public_ref_dir 		Directory with list of cancer genes used to validate the predictions
+                --participant_name  		Name of the tool used for prediction
+                --metrics_ref_dir 		Dir that contains metrics reference datasets for all cancer types
+                --cancer_types  		List of types of cancer selected by the user, separated by spaces
+                --assess_dir			Dir where the data for the benchmark are stored
+	    Other options:
+                --results_dir		The output directory where the results will be saved
+	    Flags:
+                --help			Display this message
+```
 Default input parameters and Docker images to use for each step can be specified in the [config](https://github.com/javi-gv94/TCGA_nf_workflow/blob/master/nextflow.config) file
