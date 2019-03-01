@@ -25,8 +25,7 @@ The workflow takes an input file with Cancer Driver Genes predictions (i.e. the 
 In order to use the workflow you need to:
 * Install [Nextflow](https://www.nextflow.io/)
 * Clone [this repository](https://github.com/inab/TCGA_visualizer) in a separate directory, and build locally the three Docker images found in it, running the `build.sh` script within that repo.
-* Run it just using *`nextflow run main.nf`*
-Arguments specifications:
+* Run it just using *`nextflow run main.nf`*. Arguments specifications:
 ```
 	    Usage:
 	    Run the pipeline with default parameters:

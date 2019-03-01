@@ -3,9 +3,9 @@
 if (params.help) {
 	
 	    log.info"""
-	    =========================================
+	    ==============================================
 	    TCGA CANCER DRIVER GENES BENCHMARKING PIPELINE 
-	    =========================================
+	    ==============================================
 	    Usage:
 	    Run the pipeline with default parameters:
 	    nextflow run main.nf
@@ -30,8 +30,9 @@ if (params.help) {
 } else {
 
 	log.info """\
-		   TCGA CANCER DRIVER GENES BENCHMARKING PIPELINE    
-         =============================
+		 ==============================================
+	     TCGA CANCER DRIVER GENES BENCHMARKING PIPELINE 
+	     ==============================================
          input file: ${params.predictionsFile}
          public reference directory : ${params.public_ref_dir}
          tool name : ${params.participant_name}
