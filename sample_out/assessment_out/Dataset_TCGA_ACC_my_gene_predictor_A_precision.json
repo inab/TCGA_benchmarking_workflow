@@ -1,0 +1,12 @@
+{
+    "_id": "TCGA:ACC_precision_my_gene_predictor_A",
+    "challenge_id": "ACC",
+    "community_id": "TCGA",
+    "metrics": {
+        "metric_id": "precision",
+        "stderr": 0,
+        "value": 0.0047169811320754715
+    },
+    "participant_id": "my_gene_predictor",
+    "type": "assessment"
+}

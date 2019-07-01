@@ -1,0 +1,30 @@
+[
+    {
+        "id": "ACC",
+        "participants": [
+            "MutSig2CV",
+            "compositeDriver",
+            "2020plus",
+            "OncodriveFM",
+            "ActiveDriver",
+            "e-Driver",
+            "OncodriveCLUST",
+            "MuSiC",
+            "my_gene_predictor"
+        ]
+    },
+    {
+        "id": "BRCA",
+        "participants": [
+            "MutSig2CV",
+            "compositeDriver",
+            "2020plus",
+            "OncodriveFM",
+            "ActiveDriver",
+            "e-Driver",
+            "OncodriveCLUST",
+            "MuSiC",
+            "my_gene_predictor"
+        ]
+    }
+]
