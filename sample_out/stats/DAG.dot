@@ -8,8 +8,8 @@ p14 [label="compute_metrics"];
 p1 -> p14 [label="gold_standards_dir"];
 
 p2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
-p16 [label="manage_assessment_data"];
-p2 -> p16 [label="benchmark_data"];
+p17 [label="manage_assessment_data"];
+p2 -> p17 [label="benchmark_data"];
 
 p3 [shape=point,label="",fixedsize=true,width=0.1];
 p8 [label="validation"];
@@ -56,11 +56,15 @@ p14 [label="compute_metrics"];
 p13 -> p14 [label="assessment_out"];
 
 p14 [label="compute_metrics"];
-p16 [label="manage_assessment_data"];
-p14 -> p16 [label="PARTICIPANT_DATA"];
+p17 [label="manage_assessment_data"];
+p14 -> p17 [label="PARTICIPANT_DATA"];
 
 p15 [shape=point,label="",fixedsize=true,width=0.1];
-p16 [label="manage_assessment_data"];
-p15 -> p16 [label="aggregation_dir"];
+p17 [label="manage_assessment_data"];
+p15 -> p17 [label="challenge_status"];
+
+p16 [shape=point,label="",fixedsize=true,width=0.1];
+p17 [label="manage_assessment_data"];
+p16 -> p17 [label="aggregation_dir"];
 
 }

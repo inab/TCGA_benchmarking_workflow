@@ -19,12 +19,16 @@ if (params.help) {
                 --public_ref_dir 		Directory with list of cancer genes used to validate the predictions
                 --participant_name  		Name of the tool used for prediction
                 --metrics_ref_dir 		Dir that contains metrics reference datasets for all cancer types
-                --cancer_types  		List of types of cancer selected by the user, separated by spaces
+                --challenges_ids  		List of types of cancer selected by the user, separated by spaces
                 --assess_dir			Dir where the data for the benchmark are stored
+				--challenge_status 			Boolean - whether benchmarking event is OPEN or CLOSED)
+
 	    Other options:
                 --validation_result		The output directory where the results from validation step will be saved
 				--assessment_results	The output directory where the results from the computed metrics step will be saved
 				--aggregation_results	The output directory where the consolidation of the benchmark will be saved
+				--statistics_results	The output directory with nextflow statistics
+	  			--otherdir					The output directory where custom results will be saved (no directory inside)
 	    Flags:
                 --help			Display this message
 	    """.stripIndent()
@@ -41,11 +45,14 @@ if (params.help) {
          public reference directory : ${params.public_ref_dir}
          tool name : ${params.participant_name}
          metrics reference datasets: ${params.metrics_ref_dir}
-		 selected cancer types: ${params.cancer_types}
+		 selected cancer types: ${params.challenges_ids}
 		 benchmark data: ${params.assess_dir}
+		 benchmarking event status: ${params.challenge_status}
 		 validation results directory: ${params.validation_result}
 		 assessment results directory: ${params.assessment_results}
 		 consolidated benchmark results directory: ${params.aggregation_results}
+		 Statistics results about nextflow run: ${params.statistics_results}
+		 Directory with community-specific results: ${params.otherdir}
          """
 	.stripIndent()
 
@@ -58,14 +65,18 @@ input_file = file(params.predictionsFile)
 ref_dir = Channel.fromPath( params.public_ref_dir, type: 'dir' )
 tool_name = params.participant_name
 gold_standards_dir = Channel.fromPath(params.metrics_ref_dir, type: 'dir' ) 
-cancer_types = params.cancer_types
+cancer_types = params.challenges_ids
 benchmark_data = Channel.fromPath(params.assess_dir, type: 'dir' )
 community_id = params.community_id
+
+// check whether the whole workflow should be run
+challenge_status = params.challenge_status
 
 // output 
 validation_out = file(params.validation_result)
 assessment_out = file(params.assessment_results)
 aggregation_dir = file(params.aggregation_results)
+other_dir = file(params.otherdir)
 
 
 process validation {
@@ -120,9 +131,13 @@ process manage_assessment_data {
 	tag "Performing benchmark assessment and building plots"
 
 	input:
+	val challenge_status
 	file benchmark_data
 	file participant_metrics from PARTICIPANT_DATA
 	val aggregation_dir
+
+	when:
+	challenge_status == "CLOSED"
 
 	"""
 	python /app/manage_assessment_data.py -b $benchmark_data -p $participant_metrics -o $aggregation_dir
