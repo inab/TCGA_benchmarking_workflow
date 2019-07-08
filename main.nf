@@ -21,7 +21,6 @@ if (params.help) {
                 --metrics_ref_dir 		Dir that contains metrics reference datasets for all cancer types
                 --challenges_ids  		List of types of cancer selected by the user, separated by spaces
                 --assess_dir			Dir where the data for the benchmark are stored
-				--challenge_status 			Boolean - whether benchmarking event is OPEN or CLOSED)
 
 	    Other options:
                 --validation_result		The output directory where the results from validation step will be saved
@@ -47,7 +46,6 @@ if (params.help) {
          metrics reference datasets: ${params.metrics_ref_dir}
 		 selected cancer types: ${params.challenges_ids}
 		 benchmark data: ${params.assess_dir}
-		 benchmarking event status: ${params.challenge_status}
 		 validation results directory: ${params.validation_result}
 		 assessment results directory: ${params.assessment_results}
 		 consolidated benchmark results directory: ${params.aggregation_results}
@@ -68,9 +66,6 @@ gold_standards_dir = Channel.fromPath(params.metrics_ref_dir, type: 'dir' )
 cancer_types = params.challenges_ids
 benchmark_data = Channel.fromPath(params.assess_dir, type: 'dir' )
 community_id = params.community_id
-
-// check whether the whole workflow should be run
-challenge_status = params.challenge_status
 
 // output 
 validation_out = file(params.validation_result)
@@ -126,18 +121,14 @@ process compute_metrics {
 
 }
 
-process manage_assessment_data {
+process benchmark_consolidation {
 
 	tag "Performing benchmark assessment and building plots"
 
 	input:
-	val challenge_status
 	file benchmark_data
 	file participant_metrics from PARTICIPANT_DATA
 	val aggregation_dir
-
-	when:
-	challenge_status == "CLOSED"
 
 	"""
 	python /app/manage_assessment_data.py -b $benchmark_data -p $participant_metrics -o $aggregation_dir

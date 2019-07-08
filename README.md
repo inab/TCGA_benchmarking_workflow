@@ -36,13 +36,19 @@ In order to use the workflow you need to:
 
 	    Mandatory arguments:
                 --predictionsFile		List of cancer genes prediction
+				--community_id			Name or OEB permanent ID for the benchmarking community
                 --public_ref_dir 		Directory with list of cancer genes used to validate the predictions
                 --participant_name  		Name of the tool used for prediction
                 --metrics_ref_dir 		Dir that contains metrics reference datasets for all cancer types
-                --cancer_types  		List of types of cancer selected by the user, separated by spaces
+                --challenges_ids  		List of types of cancer selected by the user, separated by spaces
                 --assess_dir			Dir where the data for the benchmark are stored
+
 	    Other options:
-                --results_dir		The output directory where the results will be saved
+                --validation_result		The output directory where the results from validation step will be saved
+				--assessment_results	The output directory where the results from the computed metrics step will be saved
+				--aggregation_results	The output directory where the consolidation of the benchmark will be saved
+				--statistics_results	The output directory with nextflow statistics
+	  			--otherdir					The output directory where custom results will be saved (no directory inside)
 	    Flags:
                 --help			Display this message
 ```
