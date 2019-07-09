@@ -1,6 +1,6 @@
 {
     "_id": "TCGA:my_gene_predictor_P",
-    "challenge_ids": [
+    "challenge_id": [
         "ACC",
         "BRCA"
     ],
@@ -10,7 +10,7 @@
             "archive"
         ],
         "status": "ok",
-        "validation_date": "2019-07-08T14:30:54"
+        "validation_date": "2019-07-09T15:03:30"
     },
     "participant_id": "my_gene_predictor",
     "type": "participant"

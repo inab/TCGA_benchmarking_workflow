@@ -58,5 +58,6 @@
                 "y_axis": "precision"
             }
         }
-    }
+    },
+    "type": "aggregation"
 }

@@ -8,8 +8,8 @@ p14 [label="compute_metrics"];
 p1 -> p14 [label="gold_standards_dir"];
 
 p2 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
-p16 [label="benchmark_consolidation"];
-p2 -> p16 [label="benchmark_data"];
+p18 [label="benchmark_consolidation"];
+p2 -> p18 [label="benchmark_data"];
 
 p3 [shape=point,label="",fixedsize=true,width=0.1];
 p8 [label="validation"];
@@ -56,11 +56,19 @@ p14 [label="compute_metrics"];
 p13 -> p14 [label="assessment_out"];
 
 p14 [label="compute_metrics"];
-p16 [label="benchmark_consolidation"];
-p14 -> p16 [label="PARTICIPANT_DATA"];
+p18 [label="benchmark_consolidation"];
+p14 -> p18 [label="PARTICIPANT_DATA"];
 
 p15 [shape=point,label="",fixedsize=true,width=0.1];
-p16 [label="benchmark_consolidation"];
-p15 -> p16 [label="aggregation_dir"];
+p18 [label="benchmark_consolidation"];
+p15 -> p18 [label="aggregation_dir"];
+
+p16 [shape=point,label="",fixedsize=true,width=0.1];
+p18 [label="benchmark_consolidation"];
+p16 -> p18 [label="validation_out"];
+
+p17 [shape=point,label="",fixedsize=true,width=0.1];
+p18 [label="benchmark_consolidation"];
+p17 -> p18 [label="data_model_export_dir"];
 
 }
