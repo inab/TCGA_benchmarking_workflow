@@ -63,7 +63,7 @@ if (params.help) {
 
 input_file = file(params.predictionsFile)
 ref_dir = Channel.fromPath( params.public_ref_dir, type: 'dir' )
-tool_name = params.participant_name
+tool_name = params.participant_name.replaceAll("\\s","_")
 gold_standards_dir = Channel.fromPath(params.metrics_ref_dir, type: 'dir' ) 
 cancer_types = params.challenges_ids
 benchmark_data = Channel.fromPath(params.assess_dir, type: 'dir' )
