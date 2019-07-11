@@ -77,12 +77,36 @@ data_model_export_dir = file(params.data_model_export_dir)
 other_dir = file(params.otherdir)
 
 
+
+/*
+* Assuring the preconditions (in this case, the docker images) are in place
+*/
+process dockerPreconditions {
+
+  tag "Building required docker images - $docker_name"
+  publishDir path: "${params.statistics_results}", mode: 'copy', overwrite: true
+
+  input:
+  val docker_name from Channel.from("tcga_validation", "tcga_metrics", "tcga_consolidation")
+
+  output:
+  file docker_image_dependency
+
+  """
+  docker build -t $docker_name:1.0 "$baseDir/containers/$docker_name"
+
+  touch docker_image_dependency
+  """
+
+}
+
 process validation {
 
 	// validExitStatus 0,1
 	tag "Validating input file format"
 
 	input:
+	file docker_image_dependency
 	file input_file
 	file ref_dir 
 	val cancer_types
