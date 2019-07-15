@@ -83,17 +83,16 @@ other_dir = file(params.otherdir)
 */
 process dockerPreconditions {
 
-  tag "Building required docker images - $docker_name"
+  tag "Building required docker images "
   publishDir path: "${params.statistics_results}", mode: 'copy', overwrite: true
-
-  input:
-  val docker_name from Channel.from("tcga_validation", "tcga_metrics", "tcga_consolidation")
 
   output:
   file docker_image_dependency
 
   """
-  docker build -t $docker_name:1.0 "$baseDir/containers/$docker_name"
+  docker build -t tcga_validation:1.0 "$baseDir/containers/tcga_validation" &&
+  docker build -t tcga_metrics:1.0 "$baseDir/containers/tcga_metrics" &&
+  docker build -t tcga_consolidation:1.0 "$baseDir/containers/tcga_consolidation" &&
 
   touch docker_image_dependency
   """
