@@ -25,8 +25,8 @@ if (params.help) {
 	    Other options:
                 --validation_result		The output directory where the results from validation step will be saved
 				--assessment_results	The output directory where the results from the computed metrics step will be saved
-				--aggregation_results	The output directory where the consolidation of the benchmark will be saved
-				--statistics_results	The output directory with nextflow statistics
+				--outdir	The output directory where the consolidation of the benchmark will be saved
+				--statsdir	The output directory with nextflow statistics
 				--data_model_export_dir	The output dir where json file with benchmarking data model contents will be saved
 	  			--otherdir					The output directory where custom results will be saved (no directory inside)
 	    Flags:
@@ -49,8 +49,8 @@ if (params.help) {
 		 benchmark data: ${params.assess_dir}
 		 validation results directory: ${params.validation_result}
 		 assessment results directory: ${params.assessment_results}
-		 consolidated benchmark results directory: ${params.aggregation_results}
-		 Statistics results about nextflow run: ${params.statistics_results}
+		 consolidated benchmark results directory: ${params.outdir}
+		 Statistics results about nextflow run: ${params.statsdir}
 		 Benchmarking data model file location: ${params.data_model_export_dir}
 		 Directory with community-specific results: ${params.otherdir}
          """
@@ -72,7 +72,7 @@ community_id = params.community_id
 // output 
 validation_out = file(params.validation_result)
 assessment_out = file(params.assessment_results)
-aggregation_dir = file(params.aggregation_results)
+aggregation_dir = file(params.outdir)
 data_model_export_dir = file(params.data_model_export_dir)
 other_dir = file(params.otherdir)
 
@@ -84,7 +84,7 @@ other_dir = file(params.otherdir)
 process dockerPreconditions {
 
   tag "Building required docker images "
-  publishDir path: "${params.statistics_results}", mode: 'copy', overwrite: true
+  publishDir path: "${params.statsdir}", mode: 'copy', overwrite: true
 
   output:
   file docker_image_dependency
