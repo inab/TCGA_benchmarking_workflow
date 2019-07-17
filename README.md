@@ -32,25 +32,26 @@ In order to use the workflow you need to:
 	    nextflow run main.nf
 
 	    Run with user parameters:
- 	    nextflow run main.nf --predictionsFile {driver.genes.file} --public_ref_dir {validation.reference.file} --participant_name {tool.name} --metrics_ref_dir {gold.standards.dir} --cancer_types {analyzed.cancer.types} --assess_dir {benchmark.data.dir} --results_dir {output.dir}
+ 	    nextflow run main.nf --input {driver.genes.file} --public_ref_dir {validation.reference.file} --participant_id {tool.name} --goldstandard_dir {gold.standards.dir} --cancer_types {analyzed.cancer.types} --assess_dir {benchmark.data.dir} --results_dir {output.dir}
 
 	    Mandatory arguments:
-                --predictionsFile		List of cancer genes prediction
+                --input		List of cancer genes prediction
 				--community_id			Name or OEB permanent ID for the benchmarking community
                 --public_ref_dir 		Directory with list of cancer genes used to validate the predictions
-                --participant_name  		Name of the tool used for prediction
-                --metrics_ref_dir 		Dir that contains metrics reference datasets for all cancer types
-                --challenges_ids  		List of types of cancer selected by the user, separated by spaces
+                --participant_id  		Name of the tool used for prediction
+                --goldstandard_dir 		Dir that contains metrics reference datasets for all cancer types
+                --event_id  		List of types of cancer selected by the user, separated by spaces
                 --assess_dir			Dir where the data for the benchmark are stored
 
 	    Other options:
                 --validation_result		The output directory where the results from validation step will be saved
 				--assessment_results	The output directory where the results from the computed metrics step will be saved
-				--aggregation_results	The output directory where the consolidation of the benchmark will be saved
-				--statistics_results	The output directory with nextflow statistics
+				--outdir	The output directory where the consolidation of the benchmark will be saved
+				--statsdir	The output directory with nextflow statistics
 				--data_model_export_dir	The output dir where json file with benchmarking data model contents will be saved
 	  			--otherdir					The output directory where custom results will be saved (no directory inside)
 	    Flags:
                 --help			Display this message
 ```
-Default input parameters and Docker images to use for each step can be specified in the [config](https://github.com/javi-gv94/TCGA_nf_workflow/blob/master/nextflow.config) file
+Default input parameters and Docker images to use for each step can be specified in the [config](https://github.com/javi-gv94/TCGA_nf_workflow/blob/master/nextflow.config) file. 
+**NOTE: In order to make your workflow compatible with the [OpenEBench VRE Nextflow Executor](https://github.com/inab/vre-process_nextflow-executor), please make sure to use the same parameter names in your workflow.**

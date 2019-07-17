@@ -11,22 +11,22 @@ if (params.help) {
 	    nextflow run main.nf
 
 	    Run with user parameters:
- 	    nextflow run main.nf --predictionsFile {driver.genes.file} --public_ref_dir {validation.reference.file} --participant_name {tool.name} --metrics_ref_dir {gold.standards.dir} --cancer_types {analyzed.cancer.types} --assess_dir {benchmark.data.dir} --results_dir {output.dir}
+ 	    nextflow run main.nf --input {driver.genes.file} --public_ref_dir {validation.reference.file} --participant_id {tool.name} --goldstandard_dir {gold.standards.dir} --cancer_types {analyzed.cancer.types} --assess_dir {benchmark.data.dir} --results_dir {output.dir}
 
 	    Mandatory arguments:
-                --predictionsFile		List of cancer genes prediction
+                --input		List of cancer genes prediction
 				--community_id			Name or OEB permanent ID for the benchmarking community
                 --public_ref_dir 		Directory with list of cancer genes used to validate the predictions
-                --participant_name  		Name of the tool used for prediction
-                --metrics_ref_dir 		Dir that contains metrics reference datasets for all cancer types
-                --challenges_ids  		List of types of cancer selected by the user, separated by spaces
+                --participant_id  		Name of the tool used for prediction
+                --goldstandard_dir 		Dir that contains metrics reference datasets for all cancer types
+                --event_id  		List of types of cancer selected by the user, separated by spaces
                 --assess_dir			Dir where the data for the benchmark are stored
 
 	    Other options:
                 --validation_result		The output directory where the results from validation step will be saved
 				--assessment_results	The output directory where the results from the computed metrics step will be saved
-				--aggregation_results	The output directory where the consolidation of the benchmark will be saved
-				--statistics_results	The output directory with nextflow statistics
+				--outdir	The output directory where the consolidation of the benchmark will be saved
+				--statsdir	The output directory with nextflow statistics
 				--data_model_export_dir	The output dir where json file with benchmarking data model contents will be saved
 	  			--otherdir					The output directory where custom results will be saved (no directory inside)
 	    Flags:
@@ -40,17 +40,17 @@ if (params.help) {
 		 ==============================================
 	     TCGA CANCER DRIVER GENES BENCHMARKING PIPELINE 
 	     ==============================================
-         input file: ${params.predictionsFile}
+         input file: ${params.input}
 		 benchmarking community = ${params.community_id}
          public reference directory : ${params.public_ref_dir}
-         tool name : ${params.participant_name}
-         metrics reference datasets: ${params.metrics_ref_dir}
-		 selected cancer types: ${params.challenges_ids}
+         tool name : ${params.participant_id}
+         metrics reference datasets: ${params.goldstandard_dir}
+		 selected cancer types: ${params.event_id}
 		 benchmark data: ${params.assess_dir}
 		 validation results directory: ${params.validation_result}
 		 assessment results directory: ${params.assessment_results}
-		 consolidated benchmark results directory: ${params.aggregation_results}
-		 Statistics results about nextflow run: ${params.statistics_results}
+		 consolidated benchmark results directory: ${params.outdir}
+		 Statistics results about nextflow run: ${params.statsdir}
 		 Benchmarking data model file location: ${params.data_model_export_dir}
 		 Directory with community-specific results: ${params.otherdir}
          """
@@ -61,18 +61,18 @@ if (params.help) {
 
 // input files
 
-input_file = file(params.predictionsFile)
+input_file = file(params.input)
 ref_dir = Channel.fromPath( params.public_ref_dir, type: 'dir' )
-tool_name = params.participant_name.replaceAll("\\s","_")
-gold_standards_dir = Channel.fromPath(params.metrics_ref_dir, type: 'dir' ) 
-cancer_types = params.challenges_ids
+tool_name = params.participant_id.replaceAll("\\s","_")
+gold_standards_dir = Channel.fromPath(params.goldstandard_dir, type: 'dir' ) 
+cancer_types = params.event_id
 benchmark_data = Channel.fromPath(params.assess_dir, type: 'dir' )
 community_id = params.community_id
 
 // output 
 validation_out = file(params.validation_result)
 assessment_out = file(params.assessment_results)
-aggregation_dir = file(params.aggregation_results)
+aggregation_dir = file(params.outdir)
 data_model_export_dir = file(params.data_model_export_dir)
 other_dir = file(params.otherdir)
 
