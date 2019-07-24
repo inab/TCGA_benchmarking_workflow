@@ -11,7 +11,7 @@ parser.add_argument("-com", "--community_name", help="name of benchmarking commu
 parser.add_argument("-c", "--cancer_types", nargs='+', help="list of types of cancer selected by the user, separated by spaces", required=True)
 parser.add_argument("-p", "--participant_name", help="name of the tool used for prediction", required=True)
 parser.add_argument("-r", "--public_ref_dir", help="directory with the list of cancer genes used to validate the predictions", required=True)
-parser.add_argument("-o", "--output", help="output directory where participant JSON file will be written",
+parser.add_argument("-o", "--output", help="output path where participant JSON file will be written",
                     required=True)
 
 args = parser.parse_args()
@@ -25,17 +25,21 @@ def main(args):
     community = args.community_name
     challenges = args.cancer_types
     participant_name = args.participant_name
-    out_dir = args.output
+    out_path = args.output
 
-    # Assuring the output directory does exist
-    if not os.path.exists(out_dir):
-        os.makedirs(out_dir)
+    # Assuring the output path does exist
+    if not os.path.exists(os.path.dirname(out_path)):
+        try:
+            os.makedirs(os.path.dirname(out_path))
+            with open(out_path, mode="a") : pass
+        except OSError as exc:
+            print("OS error: {0}".format(exc) + "\nCould not create output path: " + out_path)
 
-    validate_input_data(input_participant,  public_ref_dir, community, challenges, participant_name, out_dir)
+    validate_input_data(input_participant,  public_ref_dir, community, challenges, participant_name, out_path)
 
 
 
-def  validate_input_data(input_participant,  public_ref_dir, community, challenges, participant_name, out_dir):
+def  validate_input_data(input_participant,  public_ref_dir, community, challenges, participant_name, out_path):
     # get participant predicted genes
     try:
         participant_data = pandas.read_csv(input_participant, sep='\t',
@@ -74,15 +78,15 @@ def  validate_input_data(input_participant,  public_ref_dir, community, challeng
     output_json = JSON_templates.write_participant_dataset(data_id, community, challenges, participant_name, validated)
 
     # print file
-    output_file = os.path.join(out_dir, "Dataset_" + community + "_" + participant_name + "_P.json")
-    with open(output_file , 'w') as f:
+
+    with open(out_path , 'w') as f:
         json.dump(output_json, f, sort_keys=True, indent=4, separators=(',', ': '))
 
     if validated == True:
 
         sys.exit(0)
     else:
-        sys.exit("ERROR: Submitted data does not validate against any reference data! Please check " + output_file)
+        sys.exit("ERROR: Submitted data does not validate against any reference data! Please check " + out_path)
 
 
 if __name__ == '__main__':

@@ -18,27 +18,24 @@ def main(args):
 
     # input parameters
     data_dir = args.benchmark_data
-    participant_dir = args.participant_data
+    participant_path = args.participant_data
     output_dir = args.output
     
     # Assuring the output directory does exist
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
     # read participant metrics
-    participant_data = read_participant_data(participant_dir)
+    participant_data = read_participant_data(participant_path)
     generate_manifest(data_dir, output_dir, participant_data)
 
 
-def read_participant_data(participant_dir):
+def read_participant_data(participant_path):
     participant_data = {}
 
-    for result_file in os.listdir(participant_dir):
-        abs_result_file = os.path.join(participant_dir, result_file)
-        if fnmatch.fnmatch(result_file, "*.json") and os.path.isfile(abs_result_file):
-            with io.open(abs_result_file, mode='r', encoding="utf-8") as f:
-                result = json.load(f)
-                for item in result:
-                    participant_data.setdefault(item['challenge_id'], []).append (item)
+    with io.open(participant_path, mode='r', encoding="utf-8") as f:
+        result = json.load(f)
+        for item in result:
+            participant_data.setdefault(item['challenge_id'], []).append (item)
 
     return participant_data
 
@@ -419,7 +416,7 @@ def print_chart(cancer_dir, summary_dir, cancer_type, classification_type):
 if __name__ == '__main__':
 
     parser = ArgumentParser()
-    parser.add_argument("-p", "--participant_data", help="dir where the data for the participant is stored", required=True)
+    parser.add_argument("-p", "--participant_data", help="path where the data for the participant is stored", required=True)
     parser.add_argument("-b", "--benchmark_data", help="dir where the data for the benchmark are stored", required=True)
     parser.add_argument("-o", "--output", help="output directory where the manifest and output JSON files will be written", required=True)
 

@@ -16,17 +16,22 @@ def main(args):
     cancer_types = args.cancer_types
     participant = args.participant_name
     community = args.community_name
-    out_dir = args.output
-    
-    # Assuring the output directory does exist
-    if not os.path.exists(out_dir):
-        os.makedirs(out_dir)
+    out_path = args.output
 
-    compute_metrics(input_participant,  gold_standards_dir, cancer_types, participant, community, out_dir)
+    # Assuring the output path does exist
+    if not os.path.exists(os.path.dirname(out_path)):
+        try:
+            os.makedirs(os.path.dirname(out_path))
+            with open(out_path, mode="a"):
+                pass
+        except OSError as exc:
+            print("OS error: {0}".format(exc) + "\nCould not create output path: " + out_path)
+
+    compute_metrics(input_participant,  gold_standards_dir, cancer_types, participant, community, out_path)
 
 
 
-def compute_metrics(input_participant,  gold_standards_dir, cancer_types, participant, community, out_dir):
+def compute_metrics(input_participant,  gold_standards_dir, cancer_types, participant, community, out_path):
 
     # get participant dataset
     participant_data = pandas.read_csv(input_participant, sep='\t',
@@ -92,7 +97,7 @@ def compute_metrics(input_participant,  gold_standards_dir, cancer_types, partic
         ALL_ASSESSMENTS.extend([assessment_TPR, assessment_precision])
 
     # once all assessments have been added, print to json file
-    with io.open(os.path.join(out_dir, "Assessment_datasets.json"),
+    with io.open(out_path,
                  mode='w', encoding="utf-8") as f:
         jdata = json.dumps(ALL_ASSESSMENTS, sort_keys=True, indent=4, separators=(',', ': '))
         f.write(unicode(jdata,"utf-8"))
@@ -106,7 +111,7 @@ if __name__ == '__main__':
     parser.add_argument("-m", "--metrics_ref", help="dir that contains metrics reference datasets for all cancer types", required=True)
     parser.add_argument("-p", "--participant_name", help="name of the tool used for prediction", required=True)
     parser.add_argument("-com", "--community_name", help="name/id of benchmarking community", required=True)
-    parser.add_argument("-o", "--output", help="output directory where assessment JSON files will be written", required=True)
+    parser.add_argument("-o", "--output", help="output path where assessment JSON files will be written", required=True)
     
     args = parser.parse_args()
 

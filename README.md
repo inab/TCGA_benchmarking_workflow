@@ -48,7 +48,7 @@ In order to use the workflow you need to:
 				--assessment_results	The output directory where the results from the computed metrics step will be saved
 				--aggregation_results	The output directory where the consolidation of the benchmark will be saved
 				--statistics_results	The output directory with nextflow statistics
-				--data_model_export_dir	The output dir where json file with benchmarking data model contents will be saved
+				--data_model_export_path	The output dir where json file with benchmarking data model contents will be saved
 	  			--otherdir					The output directory where custom results will be saved (no directory inside)
 	    Flags:
                 --help			Display this message
