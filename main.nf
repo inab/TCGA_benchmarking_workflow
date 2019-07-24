@@ -8,10 +8,10 @@ if (params.help) {
 	    ==============================================
 	    Usage:
 	    Run the pipeline with default parameters:
-	    nextflow run main.nf
+	    nextflow run main.nf -profile docker
 
 	    Run with user parameters:
- 	    nextflow run main.nf --input {driver.genes.file} --public_ref_dir {validation.reference.file} --participant_id {tool.name} --goldstandard_dir {gold.standards.dir} --cancer_types {analyzed.cancer.types} --assess_dir {benchmark.data.dir} --results_dir {output.dir}
+ 	    nextflow run main.nf -profile docker --input {driver.genes.file} --public_ref_dir {validation.reference.file} --participant_id {tool.name} --goldstandard_dir {gold.standards.dir} --cancer_types {analyzed.cancer.types} --assess_dir {benchmark.data.dir} --results_dir {output.dir}
 
 	    Mandatory arguments:
                 --input		List of cancer genes prediction

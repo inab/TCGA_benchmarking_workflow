@@ -29,10 +29,10 @@ In order to use the workflow you need to:
 ```
 	    Usage:
 	    Run the pipeline with default parameters:
-	    nextflow run main.nf
+	    nextflow run main.nf -profile docker
 
 	    Run with user parameters:
- 	    nextflow run main.nf --predictionsFile {driver.genes.file} --public_ref_dir {validation.reference.file} --participant_name {tool.name} --metrics_ref_dir {gold.standards.dir} --cancer_types {analyzed.cancer.types} --assess_dir {benchmark.data.dir} --results_dir {output.dir}
+ 	    nextflow run main.nf -profile docker --predictionsFile {driver.genes.file} --public_ref_dir {validation.reference.file} --participant_name {tool.name} --metrics_ref_dir {gold.standards.dir} --cancer_types {analyzed.cancer.types} --assess_dir {benchmark.data.dir} --results_dir {output.dir}
 
 	    Mandatory arguments:
                 --predictionsFile		List of cancer genes prediction
