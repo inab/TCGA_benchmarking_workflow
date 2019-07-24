@@ -23,8 +23,8 @@ def main(args):
 
     data_model_file = []
 
-    data_model_file = join_json_files(os.path.dirname(participant_dir), data_model_file, "*.json")
-    data_model_file = join_json_files(os.path.dirname(metrics_dir), data_model_file, "*.json")
+    data_model_file = join_json_files(participant_dir, data_model_file, "*.json")
+    data_model_file = join_json_files(metrics_dir, data_model_file, "*.json")
     data_model_file = join_json_files(aggregation_dir, data_model_file, "*_summary.json")
 
     # write the merged data model file to json output
@@ -33,18 +33,27 @@ def main(args):
 
 def join_json_files(data_directory, data_model_file, file_extension):
 
-
     # add minimal datasets to data model file
-    for subdir, dirs, files in os.walk(data_directory):
-        for file in files:
-            abs_result_file = os.path.join(subdir, file)
-            if fnmatch.fnmatch(abs_result_file, file_extension) and os.path.isfile(abs_result_file):
-                with io.open(abs_result_file, mode='r', encoding="utf-8") as f:
-                    content = json.load(f)
-                    if isinstance(content, dict):
-                        data_model_file.append(content)
-                    else:
-                        data_model_file.extend(content)
+    if os.path.isfile(data_directory):
+        with io.open(data_directory, mode='r', encoding="utf-8") as f:
+            content = json.load(f)
+            if isinstance(content, dict):
+                data_model_file.append(content)
+            else:
+                data_model_file.extend(content)
+
+    elif os.path.isdir(data_directory):  # if it is a directory loop over all files and search for all json
+
+        for subdir, dirs, files in os.walk(data_directory):
+            for file in files:
+                abs_result_file = os.path.join(subdir, file)
+                if fnmatch.fnmatch(abs_result_file, file_extension) and os.path.isfile(abs_result_file):
+                    with io.open(abs_result_file, mode='r', encoding="utf-8") as f:
+                        content = json.load(f)
+                        if isinstance(content, dict):
+                            data_model_file.append(content)
+                        else:
+                            data_model_file.extend(content)
 
     return data_model_file
 
