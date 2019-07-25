@@ -12,7 +12,7 @@ import sys
     It should be used in the docker declarations to generate the output files in any benchmarking workflow which might be implemented in the 
     OpenEBench infrastructure.
     Benchmarking workflows architecture can be found in https://github.com/inab/TCGA_benchmarking_workflow
-    Docker declarations for each step: https://github.com/inab/TCGA_visualizer
+    Docker declarations for each step: https://github.com/inab/TCGA_benchmarking_dockers 
 
 """
 
