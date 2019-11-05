@@ -13,6 +13,7 @@ if (params.help) {
 	    nextflow run main.nf -profile docker
 
 	    Run with user parameters:
+
  	    nextflow run main.nf -profile docker --input {driver.genes.file} --public_ref_dir {validation.reference.file} --participant_id {tool.name} --goldstandard_dir {gold.standards.dir} --cancer_types {analyzed.cancer.types} --assess_dir {benchmark.data.dir} --results_dir {output.dir}
 
 	    Mandatory arguments:
@@ -29,7 +30,7 @@ if (params.help) {
 				--assessment_results	The output directory where the results from the computed metrics step will be saved
 				--outdir	The output directory where the consolidation of the benchmark will be saved
 				--statsdir	The output directory with nextflow statistics
-				--data_model_export_path	The output dir where json file with benchmarking data model contents will be saved
+				--data_model_export_dir	The output dir where json file with benchmarking data model contents will be saved
 	  			--otherdir					The output directory where custom results will be saved (no directory inside)
 	    Flags:
                 --help			Display this message
@@ -53,7 +54,7 @@ if (params.help) {
 		 assessment results directory: ${params.assessment_results}
 		 consolidated benchmark results directory: ${params.outdir}
 		 Statistics results about nextflow run: ${params.statsdir}
-		 Benchmarking data model file location: ${params.data_model_export_path}
+		 Benchmarking data model file location: ${params.data_model_export_dir}
 		 Directory with community-specific results: ${params.otherdir}
          """
 	.stripIndent()
@@ -75,7 +76,7 @@ community_id = params.community_id
 validation_out = file(params.validation_result)
 assessment_out = file(params.assessment_results)
 aggregation_dir = file(params.outdir)
-data_model_export_path = file(params.data_model_export_path)
+data_model_export_dir = file(params.data_model_export_dir)>
 other_dir = file(params.otherdir)
 
 
