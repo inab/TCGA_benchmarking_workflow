@@ -5,12 +5,12 @@ The data of this directory has been derived from the materials of next manuscrip
 [![doi:10.1016/j.cell.2018.02.060](https://img.shields.io/badge/doi-10.1016%2Fj.cell.2018.02.060-green.svg)](https://doi.org/10.1016/j.cell.2018.02.060) 
 
 ## Contents:
-- Folder [data](https://github.com/inab/TCGA_benchmarking_workflow/tree/master/TCGA_sample_data/data) contains benchmarking metrics results from the 2018 TCGA-PanCancer benchmark for the 34 analyzed
+- Folder [data](./data) contains benchmarking metrics results from the 2018 TCGA-PanCancer benchmark for the 34 analyzed
 cancer types. Those files follow the structure of the 'aggregation' datasets from the [Elixir
     Benchmarking Data Model](https://github.com/inab/benchmarking-data-model). Json schemas for those datasets can be
     found [here](https://github.com/inab/OpenEBench_scientific_visualizer/blob/master/benchmarking_data_model/inline_data_visualizer.json)
-- Folder [metrics_ref_datasets](https://github.com/inab/TCGA_benchmarking_workflow/tree/master/TCGA_sample_data/metrics_ref_datasets)
+- Folder [metrics_ref_datasets](./metrics_ref_datasets)
 contains the gold standards defined by the community for each of the cancer types.
-- Folder[public_ref](https://github.com/inab/TCGA_benchmarking_workflow/tree/master/TCGA_sample_data/public_ref) contains the 
+- Folder[public_ref](./public_ref) contains the 
 reference data used by the community for validation/predictions.
-- [All_Together.txt](https://github.com/inab/TCGA_benchmarking_workflow/tree/master/TCGA_sample_data/All_Together.txt) is a gene predictions file which can be used as input to test the workflow. 
+- [All_Together.txt](./All_Together.txt) is a gene predictions file which can be used as input to test the workflow. 

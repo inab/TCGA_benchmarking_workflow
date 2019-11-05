@@ -5,13 +5,16 @@ if (params.help) {
 	    log.info"""
 	    ==============================================
 	    TCGA CANCER DRIVER GENES BENCHMARKING PIPELINE 
+		Author: Javier Garrayo Ventas
+		Barcelona Suercomputing Center. Spain. 2019
 	    ==============================================
 	    Usage:
 	    Run the pipeline with default parameters:
-	    nextflow run main.nf
+	    nextflow run main.nf -profile docker
 
 	    Run with user parameters:
- 	    nextflow run main.nf --input {driver.genes.file} --public_ref_dir {validation.reference.file} --participant_id {tool.name} --goldstandard_dir {gold.standards.dir} --cancer_types {analyzed.cancer.types} --assess_dir {benchmark.data.dir} --results_dir {output.dir}
+
+ 	    nextflow run main.nf -profile docker --input {driver.genes.file} --public_ref_dir {validation.reference.file} --participant_id {tool.name} --goldstandard_dir {gold.standards.dir} --cancer_types {analyzed.cancer.types} --assess_dir {benchmark.data.dir} --results_dir {output.dir}
 
 	    Mandatory arguments:
                 --input		List of cancer genes prediction
@@ -19,7 +22,7 @@ if (params.help) {
                 --public_ref_dir 		Directory with list of cancer genes used to validate the predictions
                 --participant_id  		Name of the tool used for prediction
                 --goldstandard_dir 		Dir that contains metrics reference datasets for all cancer types
-                --event_id  		List of types of cancer selected by the user, separated by spaces
+                --challenges_ids  		List of types of cancer selected by the user, separated by spaces
                 --assess_dir			Dir where the data for the benchmark are stored
 
 	    Other options:
@@ -45,7 +48,7 @@ if (params.help) {
          public reference directory : ${params.public_ref_dir}
          tool name : ${params.participant_id}
          metrics reference datasets: ${params.goldstandard_dir}
-		 selected cancer types: ${params.event_id}
+		 selected cancer types: ${params.challenges_ids}
 		 benchmark data: ${params.assess_dir}
 		 validation results directory: ${params.validation_result}
 		 assessment results directory: ${params.assessment_results}
@@ -65,7 +68,7 @@ input_file = file(params.input)
 ref_dir = Channel.fromPath( params.public_ref_dir, type: 'dir' )
 tool_name = params.participant_id.replaceAll("\\s","_")
 gold_standards_dir = Channel.fromPath(params.goldstandard_dir, type: 'dir' ) 
-cancer_types = params.event_id
+cancer_types = params.challenges_ids
 benchmark_data = Channel.fromPath(params.assess_dir, type: 'dir' )
 community_id = params.community_id
 
@@ -73,7 +76,7 @@ community_id = params.community_id
 validation_out = file(params.validation_result)
 assessment_out = file(params.assessment_results)
 aggregation_dir = file(params.outdir)
-data_model_export_dir = file(params.data_model_export_dir)
+data_model_export_dir = file(params.data_model_export_dir)>
 other_dir = file(params.otherdir)
 
 
@@ -130,14 +133,14 @@ process benchmark_consolidation {
 
 	input:
 	file benchmark_data
-	file participant_metrics from PARTICIPANT_DATA
+	val participant_metrics from PARTICIPANT_DATA
 	val aggregation_dir
-	file validation_out
-	val data_model_export_dir
+	val validation_out
+	val data_model_export_path
 
 	"""
 	python /app/manage_assessment_data.py -b $benchmark_data -p $participant_metrics -o $aggregation_dir
-	python /app/merge_data_model_files.py -p $validation_out -m $participant_metrics -a $aggregation_dir -o $data_model_export_dir
+	python /app/merge_data_model_files.py -p $validation_out -m $participant_metrics -a $aggregation_dir -o $data_model_export_path
 	"""
 
 }
