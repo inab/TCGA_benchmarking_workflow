@@ -5,6 +5,8 @@ if (params.help) {
 	    log.info"""
 	    ==============================================
 	    TCGA CANCER DRIVER GENES BENCHMARKING PIPELINE 
+		Author: Javier Garrayo Ventas
+		Barcelona Suercomputing Center. Spain. 2019
 	    ==============================================
 	    Usage:
 	    Run the pipeline with default parameters:
@@ -77,35 +79,12 @@ data_model_export_path = file(params.data_model_export_path)
 other_dir = file(params.otherdir)
 
 
-
-/*
-* Assuring the preconditions (in this case, the docker images) are in place
-*/
-process dockerPreconditions {
-
-  tag "Building required docker images "
-  publishDir path: "${params.statsdir}", mode: 'copy', overwrite: true
-
-  output:
-  file docker_image_dependency
-
-  """
-  docker build -t tcga_validation:1.0 "$baseDir/containers/tcga_validation" &&
-  docker build -t tcga_metrics:1.0 "$baseDir/containers/tcga_metrics" &&
-  docker build -t tcga_consolidation:1.0 "$baseDir/containers/tcga_consolidation" &&
-
-  touch docker_image_dependency
-  """
-
-}
-
 process validation {
 
 	// validExitStatus 0,1
 	tag "Validating input file format"
 
 	input:
-	file docker_image_dependency
 	file input_file
 	file ref_dir 
 	val cancer_types
