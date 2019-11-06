@@ -76,7 +76,7 @@ community_id = params.community_id
 validation_out = file(params.validation_result)
 assessment_out = file(params.assessment_results)
 aggregation_dir = file(params.outdir)
-data_model_export_dir = file(params.data_model_export_dir)>
+data_model_export_dir = file(params.data_model_export_dir)
 other_dir = file(params.otherdir)
 
 
@@ -136,11 +136,11 @@ process benchmark_consolidation {
 	val participant_metrics from PARTICIPANT_DATA
 	val aggregation_dir
 	val validation_out
-	val data_model_export_path
+	val data_model_export_dir
 
 	"""
 	python /app/manage_assessment_data.py -b $benchmark_data -p $participant_metrics -o $aggregation_dir
-	python /app/merge_data_model_files.py -p $validation_out -m $participant_metrics -a $aggregation_dir -o $data_model_export_path
+	python /app/merge_data_model_files.py -p $validation_out -m $participant_metrics -a $aggregation_dir -o $data_model_export_dir
 	"""
 
 }

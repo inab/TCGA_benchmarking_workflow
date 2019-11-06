@@ -44,9 +44,9 @@ In order to use the workflow you need to:
                 --assess_dir			Dir where the data for the benchmark are stored
 
 	    Other options:
-                --validation_result		The output directory where the results from validation step will be saved
-				--assessment_results	The output directory where the results from the computed metrics step will be saved
-				--aggregation_results	The output directory where the consolidation of the benchmark will be saved
+                --validation_result		The output file where the results from validation step will be saved
+				--assessment_results	The output file where the results from the computed metrics step will be saved
+				--aggregation_results	The output file where the consolidation of the benchmark will be saved
 				--statistics_results	The output directory with nextflow statistics
 				--outdir	The output directory where the consolidation of the benchmark will be saved
 				--statsdir	The output directory with nextflow statistics
