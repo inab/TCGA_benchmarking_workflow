@@ -1,0 +1,2 @@
+task_id	hash	native_id	name	status	exit	submit	duration	realtime	%cpu	peak_rss	peak_vmem	rchar	wchar
+1	25/54def2	1055	validation (Validating input file format)	COMPLETED	0	2020-04-24 10:56:57.739	1.9s	870ms	113.1%	8.6 MB	13.3 MB	19.5 MB	380.2 KB

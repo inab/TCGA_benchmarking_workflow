@@ -1,0 +1,30 @@
+digraph "DAG" {
+p0 [shape=point,label="",fixedsize=true,width=0.1,xlabel="Channel.fromPath"];
+p6 [label="validation"];
+p0 -> p6 [label="ref_dir"];
+
+p1 [shape=point,label="",fixedsize=true,width=0.1];
+p6 [label="validation"];
+p1 -> p6 [label="input_file"];
+
+p2 [shape=point,label="",fixedsize=true,width=0.1];
+p6 [label="validation"];
+p2 -> p6 [label="cancer_types"];
+
+p3 [shape=point,label="",fixedsize=true,width=0.1];
+p6 [label="validation"];
+p3 -> p6 [label="tool_name"];
+
+p4 [shape=point,label="",fixedsize=true,width=0.1];
+p6 [label="validation"];
+p4 -> p6 [label="community_id"];
+
+p5 [shape=point,label="",fixedsize=true,width=0.1];
+p6 [label="validation"];
+p5 -> p6 [label="validation_out"];
+
+p6 [label="validation"];
+p7 [shape=point];
+p6 -> p7 [label="EXIT_STAT"];
+
+}
