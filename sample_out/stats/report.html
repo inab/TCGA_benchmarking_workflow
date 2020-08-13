@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--
-  ~ Copyright 2013-2018, Centre for Genomic Regulation (CRG)
+  ~ Copyright 2013-2019, Centre for Genomic Regulation (CRG)
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -18,11 +18,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Nextflow workflow report for run id [gloomy_poisson]">
+  <meta name="description" content="Nextflow workflow report for run id [nice_boyd]">
   <meta name="author" content="Paolo Di Tommaso, Phil Ewels">
   <link rel="icon" type="image/png" href="https://www.nextflow.io/img/favicon.png" />
 
-  <title>[gloomy_poisson] Nextflow Workflow Report</title>
+  <title>[nice_boyd] Nextflow Workflow Report</title>
 
   <style type="text/css">
   /*!
@@ -137,7 +137,7 @@ table.DTCR_clonedTable.dataTable{position:absolute !important;background-color:r
         <li class="nav-item"><a class="nav-link" href="#tasks">Tasks</a></li>
       </ul>
       <span class="navbar-text">
-        [gloomy_poisson]
+        [nice_boyd]
       </span>
     </div>
   </nav>
@@ -146,7 +146,7 @@ table.DTCR_clonedTable.dataTable{position:absolute !important;background-color:r
     <div class="container">
 
       <h1 class="display-3">Nextflow workflow report</h1>
-      <h2 class="text-muted mb-4"><samp>[gloomy_poisson]</samp> </h2>
+      <h2 class="text-muted mb-4"><samp>[nice_boyd]</samp> </h2>
 
       
           <div class="alert alert-success mb-4">
@@ -157,8 +157,8 @@ table.DTCR_clonedTable.dataTable{position:absolute !important;background-color:r
       <dl>
         <dt>Run times</dt>
         <dd>
-          <span id="workflow_start">Tue Jul 09 16:53:46 CEST 2019</span> - <span id="workflow_complete">Tue Jul 09 16:54:05 CEST 2019</span>
-          (<span id="completed_fromnow"></span>duration: <strong>19.5s</strong>)
+          <span id="workflow_start">13-Aug-2020 15:26:15</span> - <span id="workflow_complete">13-Aug-2020 15:26:22</span>
+          (<span id="completed_fromnow"></span>duration: <strong>6.4s</strong>)
         </dd>
 
         <dl>
@@ -171,7 +171,7 @@ table.DTCR_clonedTable.dataTable{position:absolute !important;background-color:r
         </dl>
 
         <dt>Nextflow command</dt>
-        <dd><pre class="nfcommand"><code>nextflow run main.nf --with-docker</code></pre></dd>
+        <dd><pre class="nfcommand"><code>nextflow run main.nf -profile docker</code></pre></dd>
       </dl>
 
       <dl class="row small">
@@ -179,13 +179,13 @@ table.DTCR_clonedTable.dataTable{position:absolute !important;background-color:r
         <dd class="col-sm-9"><samp>(a few seconds)</samp></dd>
 
         <dt class="col-sm-3">Launch directory</dt>
-        <dd class="col-sm-9"><samp>/home/jgarrayo/nextflow_tutorial/TCGA_benchmarking_workflow</samp></dd>
+        <dd class="col-sm-9"><samp>/home/jgarrayo/nextflow_pipelines/TCGA_blocks_workflow</samp></dd>
 
         <dt class="col-sm-3">Work directory</dt>
-        <dd class="col-sm-9"><samp>/home/jgarrayo/nextflow_tutorial/TCGA_benchmarking_workflow/work</samp></dd>
+        <dd class="col-sm-9"><samp>/home/jgarrayo/nextflow_pipelines/TCGA_blocks_workflow/work</samp></dd>
 
         <dt class="col-sm-3">Project directory</dt>
-        <dd class="col-sm-9"><samp>/home/jgarrayo/nextflow_tutorial/TCGA_benchmarking_workflow</samp></dd>
+        <dd class="col-sm-9"><samp>/home/jgarrayo/nextflow_pipelines/TCGA_blocks_workflow</samp></dd>
 
         
           <dt class="col-sm-3">Script name</dt>
@@ -194,21 +194,21 @@ table.DTCR_clonedTable.dataTable{position:absolute !important;background-color:r
 
         
           <dt class="col-sm-3">Script ID</dt>
-          <dd class="col-sm-9"><code>98b1ea24c8f98a1cfd18b75d238e40ff</code></dd>
+          <dd class="col-sm-9"><code>d480b8f2809ac7aa5ca083cf96b05a83</code></dd>
         
 
         <dt class="col-sm-3">Workflow session</dt>
-        <dd class="col-sm-9"><code>f3caabed-df89-415b-8fa3-daac86181a99</code></dd>
+        <dd class="col-sm-9"><code>7d24ff3f-c85f-4909-a97d-f14d72f106aa</code></dd>
 
         
 
         <dt class="col-sm-3">Workflow profile</dt>
-        <dd class="col-sm-9">standard</dd>
+        <dd class="col-sm-9">docker</dd>
 
         
 
         <dt class="col-sm-3">Nextflow version</dt>
-        <dd class="col-sm-9">version 18.10.1, build 5003 (24-10-2018 14:03 UTC)</dd>
+        <dd class="col-sm-9">version 20.07.1, build 5412 (24-07-2020 15:18 UTC)</dd>
       </dl>
     </div>
   </div>
@@ -217,7 +217,7 @@ table.DTCR_clonedTable.dataTable{position:absolute !important;background-color:r
     <h2 id="resources" style="padding-top: 80px;">Resource Usage</h2>
     <p>These plots give an overview of the distribution of resource usage for each process.</p>
 
-    <h4>CPU Usage</h4>
+    <h4>CPU</h4>
     <ul class="nav nav-tabs" id="cpuplot_tabs" role="tablist">
       <li class="nav-item">
         <a class="nav-link active" id="cpuplot_tablink" data-toggle="tab" href="#cpuplot_tabpanel" role="tab" aria-controls="pctcpuplot_tabpanel" aria-expanded="false">
@@ -240,16 +240,21 @@ table.DTCR_clonedTable.dataTable{position:absolute !important;background-color:r
 
     </div>
 
-    <h4>Memory Usage</h4>
+    <h4>Memory</h4>
     <ul class="nav nav-tabs" id="memplot_tabs" role="tablist">
       <li class="nav-item">
         <a class="nav-link active" id="memplotlot_tablink" data-toggle="tab" href="#memplotlot_tabpanel" role="tab" aria-controls="memplotlot_tabpanel" aria-expanded="false">
-          Raw Usage
+          Physical (RAM)
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="vmemplot_tablink" data-toggle="tab" href="#vmemplot_tabpanel" role="tab" aria-controls="vmemplot_tabpanel" aria-expanded="true">
+          Virtual (RAM + Disk swap)
         </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" id="pctmemplot_tablink" data-toggle="tab" href="#pctmemplot_tabpanel" role="tab" aria-controls="pctmemplot_tabpanel" aria-expanded="true">
-          % Allocated
+          % RAM Allocated
         </a>
       </li>
     </ul>
@@ -259,6 +264,9 @@ table.DTCR_clonedTable.dataTable{position:absolute !important;background-color:r
       </div>
       <div class="tab-pane fade" id="pctmemplot_tabpanel" role="tabpanel">
         <div id="pctmemplot"></div>
+      </div>
+      <div class="tab-pane fade" id="vmemplot_tabpanel" role="tabpanel">
+        <div id="vmemplot"></div>
       </div>
     </div>
 
@@ -284,7 +292,7 @@ table.DTCR_clonedTable.dataTable{position:absolute !important;background-color:r
       </div>
     </div>
 
-    <h4 id="readwriteplot_header">Disk I/O</h4>
+    <h4 id="readwriteplot_header">I/O</h4>
     <ul class="nav nav-tabs" id="readwriteplot_tabs" role="tablist">
       <li class="nav-item">
         <a class="nav-link active" id="readplot_tablink" data-toggle="tab" href="#readplot_tabpanel" role="tab" aria-controls="readplot_tabpanel" aria-expanded="true">
@@ -305,31 +313,34 @@ table.DTCR_clonedTable.dataTable{position:absolute !important;background-color:r
         <div id="writeplot"></div>
       </div>
     </div>
+  </div>
 
+  <div class="container">
     <div id="table-container">
-    <h2 id="tasks" style="padding-top: 80px;">Tasks</h2>
-    <p>This table shows information about each task in the workflow. Use the search box on the right
-      to filter rows for specific values. Clicking headers will sort the table by that value and
-      scrolling side to side will reveal more columns.</p>
-    <form class="form-inline" id="nf-form-humanreadable">
-      <label class="mr-sm-2" for="nf-table-humanreadable">Values shown as:</label>
-      <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="nf-table-humanreadable">
-        <option value="true">Human readable</option>
-        <option value="false">Raw values</option>
-      </select>
-    </form>
-  </div>
-  <div class="container-fluid">
-    <table class="table small table-striped" id="tasks_table"></table>
-  </div>
-  </div>
-  <div id="no-table-container" class="container">
-    (tasks table omitted because the dataset is too big)
+      <h2 id="tasks" style="padding-top: 80px;">Tasks</h2>
+      <p>This table shows information about each task in the workflow. Use the search box on the right
+        to filter rows for specific values. Clicking headers will sort the table by that value and
+        scrolling side to side will reveal more columns.</p>
+      <form class="form-inline" id="nf-form-humanreadable">
+        <label class="mr-sm-2" for="nf-table-humanreadable">Values shown as:</label>
+        <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="nf-table-humanreadable">
+          <option value="true">Human readable</option>
+          <option value="false">Raw values</option>
+        </select>
+      </form>
+    </div>
+    <div class="container-fluid">
+      <table class="table small table-striped" id="tasks_table"></table>
+    </div>
+
+    <div id="no-table-container">
+      (tasks table omitted because the dataset is too big)
+    </div>
   </div>
 
   <footer>
     <div class="container-fluid">
-      Generated by <a href="https://www.nextflow.io" target="_blank">Nextflow</a>, version 18.10.1
+      Generated by <a href="https://www.nextflow.io" target="_blank">Nextflow</a>, version 20.07.1
     </div>
   </footer>
 
@@ -683,6 +694,25 @@ function(a,b){return a?this.iterator("table",function(c){c._colReorder.fnOrder(a
 // JavaScript used to power the Nextflow Report Template output.
 window.data_byprocess = {};
 
+/* helper functions that takes an array of numbers each of each
+   is a integer representing a number of bytes and normalise to base 2 scale */
+function norm_mem( list ) {
+  if( list == null ) return null;
+  var result = new Array(list.length);
+  for( i=0; i<list.length; i++ ) {
+    var value = list[i];
+    var x = Math.floor(Math.log10(value) / Math.log10(1024));
+    if( x == 0 )
+      value = value/1.024;
+    else {
+      for( j=0; j<x; j++ )
+        value = value / 1.024;
+    }
+    result[i] = Math.round(value);
+  }
+  return result;
+}
+
 $(function() {
   // Script block clicked
   $('#tasks_table').on('click', '.script_block', function(e){
@@ -701,30 +731,33 @@ $(function() {
   }
 
   // Collect metrics by process
-  for(proc in window.data.summary){
+  for(let i in window.data.summary){
+    let metrics = window.data.summary[i];
+    let proc = metrics.process;
+    
     if(!window.data_byprocess.hasOwnProperty(proc)){
       window.data_byprocess[proc] = {};
     }
-    var metrics = window.data.summary[proc];
-    for (metric in metrics) {
-      if (metrics[metric] != null) {
-        window.data_byprocess[proc][metric] = [];
-        if( metrics[metric].min == metrics[metric].max ) {
+
+    for (let key in metrics) {
+      if (metrics[key] != null) {
+        window.data_byprocess[proc][key] = [];
+        if( metrics[key].min == metrics[key].max ) {
             // min equals max ==> show just a value
-            window.data_byprocess[proc][metric].push(metrics[metric].min);
+            window.data_byprocess[proc][key].push(metrics[key].min);
         }
         else {
             // otherwise show all values
-            window.data_byprocess[proc][metric].push(metrics[metric].min);
-            window.data_byprocess[proc][metric].push(metrics[metric].q1);
-            window.data_byprocess[proc][metric].push(metrics[metric].q1);
-            window.data_byprocess[proc][metric].push(metrics[metric].q2);
-            window.data_byprocess[proc][metric].push(metrics[metric].q3);
-            window.data_byprocess[proc][metric].push(metrics[metric].q3);
-            window.data_byprocess[proc][metric].push(metrics[metric].max);
+            window.data_byprocess[proc][key].push(metrics[key].min);
+            window.data_byprocess[proc][key].push(metrics[key].q1);
+            window.data_byprocess[proc][key].push(metrics[key].q1);
+            window.data_byprocess[proc][key].push(metrics[key].q2);
+            window.data_byprocess[proc][key].push(metrics[key].q3);
+            window.data_byprocess[proc][key].push(metrics[key].q3);
+            window.data_byprocess[proc][key].push(metrics[key].max);
         }
-        if (metric == "time") {
-            window.data_byprocess[proc][metric] = window.data_byprocess[proc][metric].map(function(d,i){
+        if (key == "time") {
+            window.data_byprocess[proc][key] = window.data_byprocess[proc][key].map(function(d,i){
             return moment.duration(d).asMinutes().toFixed(1);
           });
         }
@@ -737,6 +770,7 @@ $(function() {
   var cpu_usage_data = [];
   var mem_raw_data = [];
   var mem_usage_data = [];
+  var vmem_raw_data = [];
   var time_raw_data = [];
   var time_usage_data = [];
   var reads_raw_data = [];
@@ -747,18 +781,19 @@ $(function() {
     var smry = window.data_byprocess[pname];
     cpu_raw_data.push({y: smry.cpu, name: pname, type:'box', boxmean: true, boxpoints: false});
     cpu_usage_data.push({y: smry.cpuUsage, name: pname, type:'box', boxmean: true, boxpoints: false});
-    mem_raw_data.push({y: smry.mem, name: pname, type:'box', boxmean: true, boxpoints: false});
+    mem_raw_data.push({y: norm_mem(smry.mem), name: pname, type:'box', boxmean: true, boxpoints: false});
     mem_usage_data.push({y: smry.memUsage, name: pname, type:'box', boxmean: true, boxpoints: false});
+    vmem_raw_data.push({y: norm_mem(smry.vmem), name: pname, type:'box', boxmean: true, boxpoints: false});
     time_raw_data.push({y: smry.time, name: pname, type:'box', boxmean: true, boxpoints: false});
     time_usage_data.push({y: smry.timeUsage, name: pname, type:'box', boxmean: true, boxpoints: false});
-    reads_raw_data.push({y: smry.reads, name: pname, type:'box', boxmean: true, boxpoints: false});
-    writes_raw_data.push({y: smry.writes, name: pname, type:'box', boxmean: true, boxpoints: false});
+    reads_raw_data.push({y: norm_mem(smry.reads), name: pname, type:'box', boxmean: true, boxpoints: false});
+    writes_raw_data.push({y: norm_mem(smry.writes), name: pname, type:'box', boxmean: true, boxpoints: false});
   }
 
   Plotly.newPlot('cpuplot', cpu_raw_data, { title: 'CPU Usage', yaxis: {title: '% single core CPU usage', tickformat: '.1f', rangemode: 'tozero'} });
-  Plotly.newPlot('memplot', mem_raw_data, { title: 'Memory Usage', yaxis: {title: 'Memory', tickformat: '.4s', rangemode: 'tozero'} });
+  Plotly.newPlot('memplot', mem_raw_data, { title: 'Physical Memory Usage', yaxis: {title: 'Memory', tickformat: '.4s', rangemode: 'tozero'} });
   Plotly.newPlot('timeplot', time_raw_data, { title: 'Task execution real-time', yaxis: {title: 'Execution time (minutes)', tickformat: '.1f', rangemode: 'tozero'} });
-  Plotly.newPlot('readplot', reads_raw_data, { title: 'Number of bytes read from disk', yaxis: {title: 'Read bytes', tickformat: '.4s', rangemode: 'tozero'} });
+  Plotly.newPlot('readplot', reads_raw_data, { title: 'Number of bytes read', yaxis: {title: 'Read bytes', tickformat: '.4s', rangemode: 'tozero'} });
 
   // Only plot tabbed plots when shown
   $('#pctcpuplot_tablink').on('shown.bs.tab', function (e) {
@@ -768,7 +803,12 @@ $(function() {
   });
   $('#pctmemplot_tablink').on('shown.bs.tab', function (e) {
     if($('#pctmemplot').is(':empty')){
-        Plotly.newPlot('pctmemplot', mem_usage_data, { title: '% Requested Memory Used', yaxis: {title: '% Allocated Memory Used', tickformat: '.1f', rangemode: 'tozero'} });
+        Plotly.newPlot('pctmemplot', mem_usage_data, { title: '% Requested Physical Memory Used', yaxis: {title: '% Memory', tickformat: '.1f', rangemode: 'tozero'} });
+    }
+  });
+  $('#vmemplot_tablink').on('shown.bs.tab', function (e) {
+    if($('#vmemplot').is(':empty')){
+        Plotly.newPlot('vmemplot', vmem_raw_data, { title: 'Virtual Memory Usage', yaxis: {title: 'Memory', tickformat: '.4s', rangemode: 'tozero'} });
     }
   });
   $('#pcttimeplot_tablink').on('shown.bs.tab', function (e) {
@@ -778,7 +818,7 @@ $(function() {
   });
   $('#writeplot_tablink').on('shown.bs.tab', function (e) {
     if($('#writeplot').is(':empty')){
-        Plotly.newPlot('writeplot', writes_raw_data, { title: 'Number of bytes written to disk', yaxis: {title: 'Written bytes', tickformat: '.4s', rangemode: 'tozero'}});
+        Plotly.newPlot('writeplot', writes_raw_data, { title: 'Number of bytes written', yaxis: {title: 'Written bytes', tickformat: '.4s', rangemode: 'tozero'}});
     }
   });
 
@@ -823,7 +863,7 @@ $(function() {
       return bytes;
     }
     // https://stackoverflow.com/a/14919494
-    var thresh = 1000;
+    var thresh = 1024;
     if(Math.abs(bytes) < thresh) {
       return bytes + ' B';
     }
@@ -833,7 +873,7 @@ $(function() {
         bytes /= thresh;
         ++u;
     } while(Math.abs(bytes) >= thresh && u < units.length - 1);
-    return bytes.toFixed(1)+' '+units[u];
+    return bytes.toFixed(3)+' '+units[u];
   }
   function make_tasks_table(){
     // reset
@@ -980,7 +1020,7 @@ $(function() {
 
   // Nextflow report data
   window.data = { "trace":[
-{"task_id":"1","hash":"c1\/2ec138","native_id":"11625","process":"validation","module":"-","container":"tcga_validation:1.0","tag":"Validating input file format","name":"validation (Validating input file format)","status":"COMPLETED","exit":"0","submit":"1562684026550","start":"1562684026573","complete":"1562684032850","duration":"6300","realtime":"635","%cpu":"0.0","%mem":"0.0","rss":"3252224","vmem":"20193280","peak_rss":"3252224","peak_vmem":"20193280","rchar":"7726","wchar":"0","syscr":"16","syscw":"0","read_bytes":"0","write_bytes":"0","attempt":"1","workdir":"\/home\/jgarrayo\/nextflow_tutorial\/TCGA_benchmarking_workflow\/work\/c1\/2ec138eb7770d1ed27f5e603f2bb07","script":"\n\tpython \/app\/validation.py -i All_Together.txt -r public_ref -com TCGA -c ACC BRCA -p my_gene_predictor -o \/home\/jgarrayo\/nextflow_tutorial\/TCGA_benchmarking_workflow\/sample_out\/participant_out\n\t","scratch":"-","queue":"-","cpus":"1","memory":"-","disk":"-","time":"-","env":"-","error_action":"-"},{"task_id":"2","hash":"a7\/f2a673","native_id":"11983","process":"compute_metrics","module":"-","container":"tcga_metrics:1.0","tag":"Computing benchmark metrics for submitted data","name":"compute_metrics (Computing benchmark metrics for submitted data)","status":"COMPLETED","exit":"0","submit":"1562684032874","start":"1562684032949","complete":"1562684039255","duration":"6381","realtime":"330","%cpu":"0.0","%mem":"0.0","rss":"3244032","vmem":"20193280","peak_rss":"3244032","peak_vmem":"20193280","rchar":"7740","wchar":"0","syscr":"16","syscw":"0","read_bytes":"0","write_bytes":"0","attempt":"1","workdir":"\/home\/jgarrayo\/nextflow_tutorial\/TCGA_benchmarking_workflow\/work\/a7\/f2a673cee180fcde8da4fd97a53e9c","script":"\n\tpython \/app\/compute_metrics.py -i All_Together.txt -c ACC BRCA -m metrics_ref_datasets -p my_gene_predictor -com TCGA -o \/home\/jgarrayo\/nextflow_tutorial\/TCGA_benchmarking_workflow\/sample_out\/assessment_out\n\t","scratch":"-","queue":"-","cpus":"1","memory":"-","disk":"-","time":"-","env":"-","error_action":"-"},{"task_id":"3","hash":"48\/a934cf","native_id":"12336","process":"benchmark_consolidation","module":"-","container":"tcga_consolidation:1.0","tag":"Performing benchmark assessment and building plots","name":"benchmark_consolidation (Performing benchmark assessment and building plots)","status":"COMPLETED","exit":"0","submit":"1562684039266","start":"1562684039355","complete":"1562684045512","duration":"6246","realtime":"1506","%cpu":"0.0","%mem":"0.0","rss":"3252224","vmem":"20185088","peak_rss":"3252224","peak_vmem":"20185088","rchar":"7941","wchar":"0","syscr":"16","syscw":"0","read_bytes":"0","write_bytes":"0","attempt":"1","workdir":"\/home\/jgarrayo\/nextflow_tutorial\/TCGA_benchmarking_workflow\/work\/48\/a934cf81a634ce129870bace2cb895","script":"\n\tpython \/app\/manage_assessment_data.py -b data -p assessment_out -o \/home\/jgarrayo\/nextflow_tutorial\/TCGA_benchmarking_workflow\/sample_out\/results\n\tpython \/app\/merge_data_model_files.py -p participant_out -m assessment_out -a \/home\/jgarrayo\/nextflow_tutorial\/TCGA_benchmarking_workflow\/sample_out\/results -o \/home\/jgarrayo\/nextflow_tutorial\/TCGA_benchmarking_workflow\/sample_out\/benchmarking_data_model_export\n\t","scratch":"-","queue":"-","cpus":"1","memory":"-","disk":"-","time":"-","env":"-","error_action":"-"}], "summary":{"compute_metrics":{"cpu":null,"mem":{"mean":20193280,"min":20193280,"q1":20193280,"q2":20193280,"q3":20193280,"max":20193280,"minLabel":"compute_metrics (Computing benchmark metrics for submitted data)","maxLabel":"compute_metrics (Computing benchmark metrics for submitted data)","q1Label":"compute_metrics (Computing benchmark metrics for submitted data)","q2Label":"compute_metrics (Computing benchmark metrics for submitted data)","q3Label":"compute_metrics (Computing benchmark metrics for submitted data)"},"time":{"mean":330,"min":330,"q1":330,"q2":330,"q3":330,"max":330,"minLabel":"compute_metrics (Computing benchmark metrics for submitted data)","maxLabel":"compute_metrics (Computing benchmark metrics for submitted data)","q1Label":"compute_metrics (Computing benchmark metrics for submitted data)","q2Label":"compute_metrics (Computing benchmark metrics for submitted data)","q3Label":"compute_metrics (Computing benchmark metrics for submitted data)"},"reads":null,"writes":null,"cpuUsage":null,"memUsage":null,"timeUsage":null},"benchmark_consolidation":{"cpu":null,"mem":{"mean":20185088,"min":20185088,"q1":20185088,"q2":20185088,"q3":20185088,"max":20185088,"minLabel":"benchmark_consolidation (Performing benchmark assessment and building plots)","maxLabel":"benchmark_consolidation (Performing benchmark assessment and building plots)","q1Label":"benchmark_consolidation (Performing benchmark assessment and building plots)","q2Label":"benchmark_consolidation (Performing benchmark assessment and building plots)","q3Label":"benchmark_consolidation (Performing benchmark assessment and building plots)"},"time":{"mean":1506,"min":1506,"q1":1506,"q2":1506,"q3":1506,"max":1506,"minLabel":"benchmark_consolidation (Performing benchmark assessment and building plots)","maxLabel":"benchmark_consolidation (Performing benchmark assessment and building plots)","q1Label":"benchmark_consolidation (Performing benchmark assessment and building plots)","q2Label":"benchmark_consolidation (Performing benchmark assessment and building plots)","q3Label":"benchmark_consolidation (Performing benchmark assessment and building plots)"},"reads":null,"writes":null,"cpuUsage":null,"memUsage":null,"timeUsage":null},"validation":{"cpu":null,"mem":{"mean":20193280,"min":20193280,"q1":20193280,"q2":20193280,"q3":20193280,"max":20193280,"minLabel":"validation (Validating input file format)","maxLabel":"validation (Validating input file format)","q1Label":"validation (Validating input file format)","q2Label":"validation (Validating input file format)","q3Label":"validation (Validating input file format)"},"time":{"mean":635,"min":635,"q1":635,"q2":635,"q3":635,"max":635,"minLabel":"validation (Validating input file format)","maxLabel":"validation (Validating input file format)","q1Label":"validation (Validating input file format)","q2Label":"validation (Validating input file format)","q3Label":"validation (Validating input file format)"},"reads":null,"writes":null,"cpuUsage":null,"memUsage":null,"timeUsage":null}} };
+{"task_id":"1","hash":"93\/31ef43","native_id":"8115","process":"validation","module":"-","container":"tcga_validation:1.0","tag":"Validating input file format","name":"validation (Validating input file format)","status":"COMPLETED","exit":"0","submit":"1597325176723","start":"1597325176812","complete":"1597325178337","duration":"1614","realtime":"719","%cpu":"139.8","%mem":"0.0","rss":"13520896","vmem":"215375872","peak_rss":"13520896","peak_vmem":"215384064","rchar":"20447920","wchar":"389352","syscr":"1968","syscw":"133","read_bytes":"0","write_bytes":"417792","attempt":"1","workdir":"\/home\/jgarrayo\/nextflow_pipelines\/TCGA_blocks_workflow\/work\/93\/31ef4328a584d3555322ff581158cf","script":"\n\tpython \/app\/validation.py -i All_Together.txt -r public_ref -com TCGA -c ACC BRCA -p my_gene_predictor -o \/home\/jgarrayo\/nextflow_pipelines\/TCGA_blocks_workflow\/sample_out\/participant_out\/validated-participant-data.json\n\t","scratch":"-","queue":"-","cpus":"1","memory":"-","disk":"-","time":"-","env":"-","error_action":"-","vol_ctxt":"1","inv_ctxt":"4"},{"task_id":"2","hash":"22\/6f3f1e","native_id":"8436","process":"compute_metrics","module":"-","container":"tcga_metrics:1.0","tag":"Computing benchmark metrics for submitted data","name":"compute_metrics (Computing benchmark metrics for submitted data)","status":"COMPLETED","exit":"0","submit":"1597325178362","start":"1597325178438","complete":"1597325179715","duration":"1353","realtime":"397","%cpu":"183.3","%mem":"0.0","rss":"14974976","vmem":"350593024","peak_rss":"14974976","peak_vmem":"350601216","rchar":"11107449","wchar":"390352","syscr":"1945","syscw":"133","read_bytes":"0","write_bytes":"417792","attempt":"1","workdir":"\/home\/jgarrayo\/nextflow_pipelines\/TCGA_blocks_workflow\/work\/22\/6f3f1ec0cbbd296c167b75acba717d","script":"\n\tpython \/app\/compute_metrics.py -i All_Together.txt -c ACC BRCA -m metrics_ref_datasets -p my_gene_predictor -com TCGA -o \/home\/jgarrayo\/nextflow_pipelines\/TCGA_blocks_workflow\/sample_out\/assessment_out\/Assessment_datasets.json\n\t","scratch":"-","queue":"-","cpus":"1","memory":"-","disk":"-","time":"-","env":"-","error_action":"-","vol_ctxt":"2","inv_ctxt":"2"},{"task_id":"3","hash":"c5\/18e9ce","native_id":"8764","process":"benchmark_consolidation","module":"-","container":"tcga_consolidation:1.0","tag":"Performing benchmark assessment and building plots","name":"benchmark_consolidation (Performing benchmark assessment and building plots)","status":"COMPLETED","exit":"0","submit":"1597325179730","start":"1597325179815","complete":"1597325182124","duration":"2394","realtime":"1577","%cpu":"189.1","%mem":"0.1","rss":"95608832","vmem":"661274624","peak_rss":"95608832","peak_vmem":"661733376","rchar":"123036710","wchar":"1038454","syscr":"29462","syscw":"233","read_bytes":"0","write_bytes":"1093632","attempt":"1","workdir":"\/home\/jgarrayo\/nextflow_pipelines\/TCGA_blocks_workflow\/work\/c5\/18e9ce91f923171078c521eb8e5566","script":"\n\tpython \/app\/manage_assessment_data.py -b data -p \/home\/jgarrayo\/nextflow_pipelines\/TCGA_blocks_workflow\/sample_out\/assessment_out\/Assessment_datasets.json -o \/home\/jgarrayo\/nextflow_pipelines\/TCGA_blocks_workflow\/sample_out\/results\n\tpython \/app\/merge_data_model_files.py -p \/home\/jgarrayo\/nextflow_pipelines\/TCGA_blocks_workflow\/sample_out\/participant_out\/validated-participant-data.json -m \/home\/jgarrayo\/nextflow_pipelines\/TCGA_blocks_workflow\/sample_out\/assessment_out\/Assessment_datasets.json -a \/home\/jgarrayo\/nextflow_pipelines\/TCGA_blocks_workflow\/sample_out\/results -o \/home\/jgarrayo\/nextflow_pipelines\/TCGA_blocks_workflow\/sample_out\/benchmarking_data_model_export\/consolidated_result.json\n\t","scratch":"-","queue":"-","cpus":"1","memory":"-","disk":"-","time":"-","env":"-","error_action":"-","vol_ctxt":"12","inv_ctxt":"24"}], "summary":[{"cpuUsage":{"mean":139.8,"min":139.8,"q1":139.8,"q2":139.8,"q3":139.8,"max":139.8,"minLabel":"validation (Validating input file format)","maxLabel":"validation (Validating input file format)","q1Label":"validation (Validating input file format)","q2Label":"validation (Validating input file format)","q3Label":"validation (Validating input file format)"},"process":"validation","mem":{"mean":13520896,"min":13520896,"q1":13520896,"q2":13520896,"q3":13520896,"max":13520896,"minLabel":"validation (Validating input file format)","maxLabel":"validation (Validating input file format)","q1Label":"validation (Validating input file format)","q2Label":"validation (Validating input file format)","q3Label":"validation (Validating input file format)"},"memUsage":null,"timeUsage":null,"vmem":{"mean":215384064,"min":215384064,"q1":215384064,"q2":215384064,"q3":215384064,"max":215384064,"minLabel":"validation (Validating input file format)","maxLabel":"validation (Validating input file format)","q1Label":"validation (Validating input file format)","q2Label":"validation (Validating input file format)","q3Label":"validation (Validating input file format)"},"reads":{"mean":20447920,"min":20447920,"q1":20447920,"q2":20447920,"q3":20447920,"max":20447920,"minLabel":"validation (Validating input file format)","maxLabel":"validation (Validating input file format)","q1Label":"validation (Validating input file format)","q2Label":"validation (Validating input file format)","q3Label":"validation (Validating input file format)"},"cpu":{"mean":139.8,"min":139.8,"q1":139.8,"q2":139.8,"q3":139.8,"max":139.8,"minLabel":"validation (Validating input file format)","maxLabel":"validation (Validating input file format)","q1Label":"validation (Validating input file format)","q2Label":"validation (Validating input file format)","q3Label":"validation (Validating input file format)"},"time":{"mean":719,"min":719,"q1":719,"q2":719,"q3":719,"max":719,"minLabel":"validation (Validating input file format)","maxLabel":"validation (Validating input file format)","q1Label":"validation (Validating input file format)","q2Label":"validation (Validating input file format)","q3Label":"validation (Validating input file format)"},"writes":{"mean":389352,"min":389352,"q1":389352,"q2":389352,"q3":389352,"max":389352,"minLabel":"validation (Validating input file format)","maxLabel":"validation (Validating input file format)","q1Label":"validation (Validating input file format)","q2Label":"validation (Validating input file format)","q3Label":"validation (Validating input file format)"}},{"cpuUsage":{"mean":183.3,"min":183.3,"q1":183.3,"q2":183.3,"q3":183.3,"max":183.3,"minLabel":"compute_metrics (Computing benchmark metrics for submitted data)","maxLabel":"compute_metrics (Computing benchmark metrics for submitted data)","q1Label":"compute_metrics (Computing benchmark metrics for submitted data)","q2Label":"compute_metrics (Computing benchmark metrics for submitted data)","q3Label":"compute_metrics (Computing benchmark metrics for submitted data)"},"process":"compute_metrics","mem":{"mean":14974976,"min":14974976,"q1":14974976,"q2":14974976,"q3":14974976,"max":14974976,"minLabel":"compute_metrics (Computing benchmark metrics for submitted data)","maxLabel":"compute_metrics (Computing benchmark metrics for submitted data)","q1Label":"compute_metrics (Computing benchmark metrics for submitted data)","q2Label":"compute_metrics (Computing benchmark metrics for submitted data)","q3Label":"compute_metrics (Computing benchmark metrics for submitted data)"},"memUsage":null,"timeUsage":null,"vmem":{"mean":350601216,"min":350601216,"q1":350601216,"q2":350601216,"q3":350601216,"max":350601216,"minLabel":"compute_metrics (Computing benchmark metrics for submitted data)","maxLabel":"compute_metrics (Computing benchmark metrics for submitted data)","q1Label":"compute_metrics (Computing benchmark metrics for submitted data)","q2Label":"compute_metrics (Computing benchmark metrics for submitted data)","q3Label":"compute_metrics (Computing benchmark metrics for submitted data)"},"reads":{"mean":11107449,"min":11107449,"q1":11107449,"q2":11107449,"q3":11107449,"max":11107449,"minLabel":"compute_metrics (Computing benchmark metrics for submitted data)","maxLabel":"compute_metrics (Computing benchmark metrics for submitted data)","q1Label":"compute_metrics (Computing benchmark metrics for submitted data)","q2Label":"compute_metrics (Computing benchmark metrics for submitted data)","q3Label":"compute_metrics (Computing benchmark metrics for submitted data)"},"cpu":{"mean":183.3,"min":183.3,"q1":183.3,"q2":183.3,"q3":183.3,"max":183.3,"minLabel":"compute_metrics (Computing benchmark metrics for submitted data)","maxLabel":"compute_metrics (Computing benchmark metrics for submitted data)","q1Label":"compute_metrics (Computing benchmark metrics for submitted data)","q2Label":"compute_metrics (Computing benchmark metrics for submitted data)","q3Label":"compute_metrics (Computing benchmark metrics for submitted data)"},"time":{"mean":397,"min":397,"q1":397,"q2":397,"q3":397,"max":397,"minLabel":"compute_metrics (Computing benchmark metrics for submitted data)","maxLabel":"compute_metrics (Computing benchmark metrics for submitted data)","q1Label":"compute_metrics (Computing benchmark metrics for submitted data)","q2Label":"compute_metrics (Computing benchmark metrics for submitted data)","q3Label":"compute_metrics (Computing benchmark metrics for submitted data)"},"writes":{"mean":390352,"min":390352,"q1":390352,"q2":390352,"q3":390352,"max":390352,"minLabel":"compute_metrics (Computing benchmark metrics for submitted data)","maxLabel":"compute_metrics (Computing benchmark metrics for submitted data)","q1Label":"compute_metrics (Computing benchmark metrics for submitted data)","q2Label":"compute_metrics (Computing benchmark metrics for submitted data)","q3Label":"compute_metrics (Computing benchmark metrics for submitted data)"}},{"cpuUsage":{"mean":189.1,"min":189.1,"q1":189.1,"q2":189.1,"q3":189.1,"max":189.1,"minLabel":"benchmark_consolidation (Performing benchmark assessment and building plots)","maxLabel":"benchmark_consolidation (Performing benchmark assessment and building plots)","q1Label":"benchmark_consolidation (Performing benchmark assessment and building plots)","q2Label":"benchmark_consolidation (Performing benchmark assessment and building plots)","q3Label":"benchmark_consolidation (Performing benchmark assessment and building plots)"},"process":"benchmark_consolidation","mem":{"mean":95608832,"min":95608832,"q1":95608832,"q2":95608832,"q3":95608832,"max":95608832,"minLabel":"benchmark_consolidation (Performing benchmark assessment and building plots)","maxLabel":"benchmark_consolidation (Performing benchmark assessment and building plots)","q1Label":"benchmark_consolidation (Performing benchmark assessment and building plots)","q2Label":"benchmark_consolidation (Performing benchmark assessment and building plots)","q3Label":"benchmark_consolidation (Performing benchmark assessment and building plots)"},"memUsage":null,"timeUsage":null,"vmem":{"mean":661733376,"min":661733376,"q1":661733376,"q2":661733376,"q3":661733376,"max":661733376,"minLabel":"benchmark_consolidation (Performing benchmark assessment and building plots)","maxLabel":"benchmark_consolidation (Performing benchmark assessment and building plots)","q1Label":"benchmark_consolidation (Performing benchmark assessment and building plots)","q2Label":"benchmark_consolidation (Performing benchmark assessment and building plots)","q3Label":"benchmark_consolidation (Performing benchmark assessment and building plots)"},"reads":{"mean":123036710,"min":123036710,"q1":123036710,"q2":123036710,"q3":123036710,"max":123036710,"minLabel":"benchmark_consolidation (Performing benchmark assessment and building plots)","maxLabel":"benchmark_consolidation (Performing benchmark assessment and building plots)","q1Label":"benchmark_consolidation (Performing benchmark assessment and building plots)","q2Label":"benchmark_consolidation (Performing benchmark assessment and building plots)","q3Label":"benchmark_consolidation (Performing benchmark assessment and building plots)"},"cpu":{"mean":189.1,"min":189.1,"q1":189.1,"q2":189.1,"q3":189.1,"max":189.1,"minLabel":"benchmark_consolidation (Performing benchmark assessment and building plots)","maxLabel":"benchmark_consolidation (Performing benchmark assessment and building plots)","q1Label":"benchmark_consolidation (Performing benchmark assessment and building plots)","q2Label":"benchmark_consolidation (Performing benchmark assessment and building plots)","q3Label":"benchmark_consolidation (Performing benchmark assessment and building plots)"},"time":{"mean":1577,"min":1577,"q1":1577,"q2":1577,"q3":1577,"max":1577,"minLabel":"benchmark_consolidation (Performing benchmark assessment and building plots)","maxLabel":"benchmark_consolidation (Performing benchmark assessment and building plots)","q1Label":"benchmark_consolidation (Performing benchmark assessment and building plots)","q2Label":"benchmark_consolidation (Performing benchmark assessment and building plots)","q3Label":"benchmark_consolidation (Performing benchmark assessment and building plots)"},"writes":{"mean":1038454,"min":1038454,"q1":1038454,"q2":1038454,"q3":1038454,"max":1038454,"minLabel":"benchmark_consolidation (Performing benchmark assessment and building plots)","maxLabel":"benchmark_consolidation (Performing benchmark assessment and building plots)","q1Label":"benchmark_consolidation (Performing benchmark assessment and building plots)","q2Label":"benchmark_consolidation (Performing benchmark assessment and building plots)","q3Label":"benchmark_consolidation (Performing benchmark assessment and building plots)"}}] };
 
   </script>
 

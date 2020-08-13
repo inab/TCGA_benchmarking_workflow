@@ -1,4 +1,4 @@
-task_id	hash	native_id	name	status	exit	submit	duration	realtime	%cpu	rss	vmem	rchar	wchar
-1	c1/2ec138	11625	validation (Validating input file format)	COMPLETED	0	2019-07-09 16:53:46.550	6.3s	635ms	0.0%	3.1 MB	19.3 MB	7.5 KB	0
-2	a7/f2a673	11983	compute_metrics (Computing benchmark metrics for submitted data)	COMPLETED	0	2019-07-09 16:53:52.874	6.4s	330ms	0.0%	3.1 MB	19.3 MB	7.6 KB	0
-3	48/a934cf	12336	benchmark_consolidation (Performing benchmark assessment and building plots)	COMPLETED	0	2019-07-09 16:53:59.266	6.2s	1.5s	0.0%	3.1 MB	19.2 MB	7.8 KB	0
+task_id	hash	native_id	name	status	exit	submit	duration	realtime	%cpu	peak_rss	peak_vmem	rchar	wchar
+1	93/31ef43	8115	validation (Validating input file format)	COMPLETED	0	2020-08-13 15:26:16.723	1.6s	719ms	139.8%	12.9 MB	205.4 MB	19.5 MB	380.2 KB
+2	22/6f3f1e	8436	compute_metrics (Computing benchmark metrics for submitted data)	COMPLETED	0	2020-08-13 15:26:18.362	1.4s	397ms	183.3%	14.3 MB	334.4 MB	10.6 MB	381.2 KB
+3	c5/18e9ce	8764	benchmark_consolidation (Performing benchmark assessment and building plots)	COMPLETED	0	2020-08-13 15:26:19.730	2.4s	1.6s	189.1%	91.2 MB	631.1 MB	117.3 MB	1014.1 KB

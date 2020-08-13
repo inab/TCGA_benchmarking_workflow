@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-  ~ Copyright 2013-2018, Centre for Genomic Regulation (CRG)
+  ~ Copyright 2013-2019, Centre for Genomic Regulation (CRG)
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -78,13 +78,13 @@ function c0(index) { return "#9c9c9c"; }
 function c1(index) { return "#bdbdbd"; }
 function c2(index) { return colors[index % 16]; } // <-- note: uses only the first 16 colors
 
-var elapsed="20s"
-var beginningMillis=1562684025995;
-var endingMillis=1562684046034;
+var elapsed="6.6s"
+var beginningMillis=1597325176040;
+var endingMillis=1597325182628;
 var data=[
-{"label": "validation (Validating input file format)", "times": [{"starting_time": 1562684026550, "ending_time": 1562684026573, "color":c1(0)}, {"starting_time": 1562684026573, "ending_time": 1562684027208, "color":c2(0), "label": "6.3s \/ 19.3 MB"}, {"starting_time": 1562684027208, "ending_time": 1562684032850, "color":c1(0)}]},
-{"label": "compute_metrics (Computing benchmark metrics for submitted data)", "times": [{"starting_time": 1562684032874, "ending_time": 1562684032949, "color":c1(1)}, {"starting_time": 1562684032949, "ending_time": 1562684033279, "color":c2(1), "label": "6.4s \/ 19.3 MB"}, {"starting_time": 1562684033279, "ending_time": 1562684039255, "color":c1(1)}]},
-{"label": "benchmark_consolidation (Performing benchmark assessment and building plots)", "times": [{"starting_time": 1562684039266, "ending_time": 1562684039355, "color":c1(2)}, {"starting_time": 1562684039355, "ending_time": 1562684040861, "color":c2(2), "label": "6.2s \/ 19.2 MB"}, {"starting_time": 1562684040861, "ending_time": 1562684045512, "color":c1(2)}]}
+{"label": "validation (Validating input file format)", "times": [{"starting_time": 1597325176723, "ending_time": 1597325176812, "color":c1(0)}, {"starting_time": 1597325176812, "ending_time": 1597325177531, "color":c2(0), "label": "1.6s \/ 12.9 MB"}, {"starting_time": 1597325177531, "ending_time": 1597325178337, "color":c1(0)}]},
+{"label": "compute_metrics (Computing benchmark metrics for submitted data)", "times": [{"starting_time": 1597325178362, "ending_time": 1597325178438, "color":c1(1)}, {"starting_time": 1597325178438, "ending_time": 1597325178835, "color":c2(1), "label": "1.4s \/ 14.3 MB"}, {"starting_time": 1597325178835, "ending_time": 1597325179715, "color":c1(1)}]},
+{"label": "benchmark_consolidation (Performing benchmark assessment and building plots)", "times": [{"starting_time": 1597325179730, "ending_time": 1597325179815, "color":c1(2)}, {"starting_time": 1597325179815, "ending_time": 1597325181392, "color":c2(2), "label": "2.4s \/ 91.2 MB"}, {"starting_time": 1597325181392, "ending_time": 1597325182124, "color":c1(2)}]}
 ]
 
 
@@ -183,7 +183,8 @@ $(window).resize(hrz); // resize the applet on window resize
   <h3>Processes execution timeline</h3>
   <p>
     Launch time: <span id='label_launch'> </span><br>
-    Elapsed time: <span id='label_elapsed'> </span>
+    Elapsed time: <span id='label_elapsed'> </span><br>
+    Legend: job wall time / memory usage (RAM) <span id='label_legend'> </span>
   </p>
   <div id="timeline"></div>
 </div>
