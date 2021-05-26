@@ -1,2 +1,4 @@
 .nextflow*
+nextflow_install_dir
+sample*
 work/

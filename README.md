@@ -18,14 +18,14 @@ The workflow takes an input file with Cancer Driver Genes predictions (i.e. the 
 
 * [TCGA_sample_data](./TCGA_sample_data) folder contains all the reference data required by the steps. It is derived from the manuscript:
 [Comprehensive Characterization of Cancer Driver Genes and Mutations](https://www.cell.com/cell/fulltext/S0092-8674%2818%2930237-X?code=cell-site), Bailey et al, 2018, Cell [![doi:10.1016/j.cell.2018.02.060](https://img.shields.io/badge/doi-10.1016%2Fj.cell.2018.02.060-green.svg)](https://doi.org/10.1016/j.cell.2018.02.060) 
-* [sample_out](./sample_out) folder contains an example output for a worklow run, with two cancer types / challenges selected (ACC, BRCA). Results found in [sample_out/results](./sample_out/results) can be visualized in the browser using [this javascript library](https://github.com/inab/benchmarking_workflows_results_visualizer).
+* [TCGA_sample_out](./TCGA_sample_out) folder contains an example output for a worklow run, with two cancer types / challenges selected (ACC, BRCA). Results obtained from the default execution should be similar to those ones available in this directory. Results found in [TCGA_sample_out/results](./TCGA_sample_out/results) can be visualized in the browser using [`benchmarking_workflows_results_visualizer` javascript library](https://github.com/inab/benchmarking_workflows_results_visualizer).
 
 
 ## Usage
 In order to use the workflow you need to:
-* Install [Nextflow](https://www.nextflow.io/)
-* Clone [this repository](https://github.com/inab/TCGA_benchmarking_dockers ) in a separate directory, and build locally the three Docker images found in it, running the `build.sh` script within that repo.
-* Run it just using *`nextflow run main.nf`*. Arguments specifications:
+* Install [Nextflow](https://www.nextflow.io/), which depends on Java virtual machine (>=8 , <15 ). You can automate their installation for local testing using [run_local_nextflow.bash](run_local_nextflow.bash).
+* Clone [TCGA benchmarking Docker definitions repository](https://github.com/inab/TCGA_benchmarking_dockers) from tag 1.0.1 in a separate directory, and build locally the three Docker images found in it, running the `build.sh 1.0.1` script within that repo.
+* Run it just using either *`nextflow run main.nf -profile docker`* or *`./run_local_nextflow.bash run main.nf -profile docker`*. Arguments specifications:
 ```
 	    Usage:
 	    Run the pipeline with default parameters:
