@@ -1,0 +1,17 @@
+{
+    "_id": "TCGA:my_gene_predictor_P",
+    "challenge_id": [
+        "ACC",
+        "BRCA"
+    ],
+    "community_id": "TCGA",
+    "datalink": {
+        "attrs": [
+            "archive"
+        ],
+        "status": "ok",
+        "validation_date": "2021-05-27T01:02:48+00:00"
+    },
+    "participant_id": "my_gene_predictor",
+    "type": "participant"
+}

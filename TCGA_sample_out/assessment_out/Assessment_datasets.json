@@ -1,0 +1,50 @@
+[
+    {
+        "_id": "TCGA:ACC_TPR_my_gene_predictor_A",
+        "challenge_id": "ACC",
+        "community_id": "TCGA",
+        "metrics": {
+            "metric_id": "TPR",
+            "stderr": 0,
+            "value": 0.3333333333333333
+        },
+        "participant_id": "my_gene_predictor",
+        "type": "assessment"
+    },
+    {
+        "_id": "TCGA:ACC_precision_my_gene_predictor_A",
+        "challenge_id": "ACC",
+        "community_id": "TCGA",
+        "metrics": {
+            "metric_id": "precision",
+            "stderr": 0,
+            "value": 0.0047169811320754715
+        },
+        "participant_id": "my_gene_predictor",
+        "type": "assessment"
+    },
+    {
+        "_id": "TCGA:BRCA_TPR_my_gene_predictor_A",
+        "challenge_id": "BRCA",
+        "community_id": "TCGA",
+        "metrics": {
+            "metric_id": "TPR",
+            "stderr": 0,
+            "value": 0.4375
+        },
+        "participant_id": "my_gene_predictor",
+        "type": "assessment"
+    },
+    {
+        "_id": "TCGA:BRCA_precision_my_gene_predictor_A",
+        "challenge_id": "BRCA",
+        "community_id": "TCGA",
+        "metrics": {
+            "metric_id": "precision",
+            "stderr": 0,
+            "value": 0.0330188679245283
+        },
+        "participant_id": "my_gene_predictor",
+        "type": "assessment"
+    }
+]
