@@ -24,7 +24,7 @@ The workflow takes an input file with Cancer Driver Genes predictions (i.e. the 
 ## Usage
 In order to use the workflow you need to:
 * Install [Nextflow](https://www.nextflow.io/), which depends on Java virtual machine (>=8 , <15 ). You can automate their installation for local testing using [run_local_nextflow.bash](run_local_nextflow.bash).
-* Clone [TCGA benchmarking Docker definitions repository](https://github.com/inab/TCGA_benchmarking_dockers) from tag 1.0.1 in a separate directory, and build locally the three Docker images found in it, running the `build.sh 1.0.1` script within that repo.
+* Clone [TCGA benchmarking Docker definitions repository](https://github.com/inab/TCGA_benchmarking_dockers) from tag 1.0.2 in a separate directory, and build locally the three Docker images found in it, running the `build.sh 1.0.2` script within that repo.
 * Run it just using either *`nextflow run main.nf -profile docker`* or *`./run_local_nextflow.bash run main.nf -profile docker`*. Arguments specifications:
 ```
 	    Usage:
