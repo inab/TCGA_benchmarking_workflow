@@ -14,7 +14,7 @@ if (params.help) {
 
 	    Run with user parameters:
 
- 	    nextflow run main.nf -profile docker --input {driver.genes.file} --public_ref_dir {validation.reference.file} --participant_id {tool.name} --goldstandard_dir {gold.standards.dir} --cancer_types {analyzed.cancer.types} --assess_dir {benchmark.data.dir} --results_dir {output.dir}
+ 	    nextflow run main.nf -profile docker --input {driver.genes.file} --public_ref_dir {validation.reference.file} --participant_id {tool.name} --goldstandard_dir {gold.standards.dir} --cancer_types {analyzed.cancer.types} --assess_dir {benchmark.data.dir} --augmented_assess_dir {benchmark.augmented_data.dir} --results_dir {output.dir}
 
 	    Mandatory arguments:
                 --input		List of cancer genes prediction
@@ -23,10 +23,11 @@ if (params.help) {
                 --participant_id  		Name of the tool used for prediction
                 --goldstandard_dir 		Dir that contains metrics reference datasets for all cancer types
                 --challenges_ids  		List of types of cancer selected by the user, separated by spaces
-                --assess_dir			Dir where the data for the benchmark are stored
+                --assess_dir			Dir where the input data for the benchmark are stored
 
 	    Other options:
                 --validation_result		The output directory where the results from validation step will be saved
+                --augmented_assess_dir			Dir where the augmented data for the benchmark are stored
 				--assessment_results	The output directory where the results from the computed metrics step will be saved
 				--outdir	The output directory where the consolidation of the benchmark will be saved
 				--statsdir	The output directory with nextflow statistics
@@ -50,6 +51,7 @@ if (params.help) {
          metrics reference datasets: ${params.goldstandard_dir}
 		 selected cancer types: ${params.challenges_ids}
 		 benchmark data: ${params.assess_dir}
+		 augmented benchmark data: ${params.augmented_assess_dir}
 		 validation results directory: ${params.validation_result}
 		 assessment results directory: ${params.assessment_results}
 		 consolidated benchmark results directory: ${params.outdir}
@@ -76,6 +78,7 @@ community_id = params.community_id
 validation_file = file(params.validation_result)
 assessment_file = file(params.assessment_results)
 aggregation_dir = file(params.outdir, type: 'dir')
+augmented_benchmark_data = file(params.augmented_assess_dir, type: 'dir')
 // It is really a file in this implementation
 data_model_export_dir = file(params.data_model_export_dir)
 other_dir = file(params.otherdir, type: 'dir')
@@ -136,6 +139,7 @@ process benchmark_consolidation {
 	tag "Performing benchmark assessment and building plots"
 	publishDir "${aggregation_dir.parent}", pattern: "aggregation_dir", saveAs: { filename -> aggregation_dir.name }, mode: 'copy'
 	publishDir "${data_model_export_dir.parent}", pattern: "data_model_export.json", saveAs: { filename -> data_model_export_dir.name }, mode: 'copy'
+	publishDir "${augmented_benchmark_data.parent}", pattern: "augmented_benchmark_data", saveAs: { filename -> augmented_benchmark_data.name }, mode: 'copy'
 
 	input:
 	path benchmark_data
@@ -144,10 +148,12 @@ process benchmark_consolidation {
 	
 	output:
 	path 'aggregation_dir', type: 'dir'
+	path 'augmented_benchmark_data', type: 'dir'
 	path 'data_model_export.json'
 
 	"""
-	python /app/manage_assessment_data.py -b $benchmark_data -p $assessment_out -o aggregation_dir
+	cp -Lpr $benchmark_data augmented_benchmark_data
+	python /app/manage_assessment_data.py -b augmented_benchmark_data -p $assessment_out -o aggregation_dir
 	python /app/merge_data_model_files.py -p $validation_out -m $assessment_out -a aggregation_dir -o data_model_export.json
 	"""
 
