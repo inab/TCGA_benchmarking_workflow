@@ -5,8 +5,8 @@ if (params.help) {
 	    log.info"""
 	    ==============================================
 	    TCGA CANCER DRIVER GENES BENCHMARKING PIPELINE 
-		Author: Javier Garrayo Ventas
-		Barcelona Suercomputing Center. Spain. 2019
+	    Author(s): Javier Garrayo Ventas, José Mª Fernández, Asier Gonzalez-Uriarte
+	    Barcelona Supercomputing Center. Spain. 2021
 	    ==============================================
 	    Usage:
 	    Run the pipeline with default parameters:
@@ -17,49 +17,48 @@ if (params.help) {
  	    nextflow run main.nf -profile docker --input {driver.genes.file} --public_ref_dir {validation.reference.file} --participant_id {tool.name} --goldstandard_dir {gold.standards.dir} --cancer_types {analyzed.cancer.types} --assess_dir {benchmark.data.dir} --augmented_assess_dir {benchmark.augmented_data.dir} --results_dir {output.dir}
 
 	    Mandatory arguments:
-                --input		List of cancer genes prediction
-				--community_id			Name or OEB permanent ID for the benchmarking community
-                --public_ref_dir 		Directory with list of cancer genes used to validate the predictions
-                --participant_id  		Name of the tool used for prediction
-                --goldstandard_dir 		Dir that contains metrics reference datasets for all cancer types
-                --challenges_ids  		List of types of cancer selected by the user, separated by spaces
-                --assess_dir			Dir where the input data for the benchmark are stored
+                --input                 List of cancer genes prediction
+                --community_id          Name or OEB permanent ID for the benchmarking community
+                --public_ref_dir        Directory with list of cancer genes used to validate the predictions
+                --participant_id        Name of the tool used for prediction
+                --goldstandard_dir      Dir that contains metrics reference datasets for all cancer types
+                --challenges_ids        List of types of cancer selected by the user, separated by spaces
+                --assess_dir            Dir where the input data for the benchmark are stored
 
 	    Other options:
-                --validation_result		The output directory where the results from validation step will be saved
-                --augmented_assess_dir			Dir where the augmented data for the benchmark are stored
-				--assessment_results	The output directory where the results from the computed metrics step will be saved
-				--outdir	The output directory where the consolidation of the benchmark will be saved
-				--statsdir	The output directory with nextflow statistics
-				--data_model_export_dir	The output dir where json file with benchmarking data model contents will be saved
-	  			--otherdir					The output directory where custom results will be saved (no directory inside)
+                --validation_result     The output directory where the results from validation step will be saved
+                --augmented_assess_dir  Dir where the augmented data for the benchmark are stored
+                --assessment_results    The output directory where the results from the computed metrics step will be saved
+                --outdir                The output directory where the consolidation of the benchmark will be saved
+                --statsdir              The output directory with nextflow statistics
+                --data_model_export_dir The output dir where json file with benchmarking data model contents will be saved
+                --otherdir              The output directory where custom results will be saved (no directory inside)
 	    Flags:
-                --help			Display this message
-	    """.stripIndent()
+                --help                  Display this message
+	    """
 
 	exit 1
 } else {
 
 	log.info """\
-		 ==============================================
-	     TCGA CANCER DRIVER GENES BENCHMARKING PIPELINE 
-	     ==============================================
+         ==============================================
+         TCGA CANCER DRIVER GENES BENCHMARKING PIPELINE
+         ==============================================
          input file: ${params.input}
-		 benchmarking community = ${params.community_id}
+         benchmarking community = ${params.community_id}
          public reference directory : ${params.public_ref_dir}
          tool name : ${params.participant_id}
          metrics reference datasets: ${params.goldstandard_dir}
-		 selected cancer types: ${params.challenges_ids}
-		 benchmark data: ${params.assess_dir}
-		 augmented benchmark data: ${params.augmented_assess_dir}
-		 validation results directory: ${params.validation_result}
-		 assessment results directory: ${params.assessment_results}
-		 consolidated benchmark results directory: ${params.outdir}
-		 Statistics results about nextflow run: ${params.statsdir}
-		 Benchmarking data model file location: ${params.data_model_export_dir}
-		 Directory with community-specific results: ${params.otherdir}
+         selected cancer types: ${params.challenges_ids}
+         benchmark data: ${params.assess_dir}
+         augmented benchmark data: ${params.augmented_assess_dir}
+         validation results directory: ${params.validation_result}
+         assessment results directory: ${params.assessment_results}
+         consolidated benchmark results directory: ${params.outdir}
+         Statistics results about nextflow run: ${params.statsdir}
+         Benchmarking data model file location: ${params.data_model_export_dir}
+         Directory with community-specific results: ${params.otherdir}
          """
-	.stripIndent()
 
 }
 
