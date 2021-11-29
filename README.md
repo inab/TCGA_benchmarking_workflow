@@ -8,10 +8,10 @@ Nextflow workflows following the same structure as this repo's example will be i
 
 The workflow takes an input file with Cancer Driver Genes predictions (i.e. the results provided by a participant), computes a set of metrics, and compares them against the data currently stored in OpenEBench within the TCGA community. Two assessment metrics are provided for that predictions. Also, some plots (which are optional) that allow to visualize the performance of the tool are generated. The workflow consists in three standard steps, defined by OpenEBench. The tools needed to run these steps are containerised in three Docker images, whose recipes are available in the [TCGA_benchmarking_dockers](https://github.com/inab/TCGA_benchmarking_dockers ) repository and the images are stored in the [INB GitLab container registry](https://gitlab.bsc.es/inb/elixir/openebench/workflows/tcga_benchmarking_dockers/container_registry) . Separated instances are spawned from these images for each step:
 1. **Validation**: the input file format is checked and, if required, the content of the file is validated (e.g check whether the submitted gene IDs exist)
-2. **Metrics Computation**: the predictions are compared with the 'Gold Standards' provided by the community, which results in two performance metrics - precision (Positive Predictive Value) and recall(True Positive Rate).
-3. **Results Consolidation**: the benchmark itself is performed by merging the tool metrics with the rest of TCGA data. The results are provided in JSON format and SVG format (scatter plot).
+2. **Metrics Generation**: the predictions are compared with the 'Gold Standards' provided by the community, which results in two performance metrics - precision (Positive Predictive Value) and recall(True Positive Rate).
+3. **Consolidation**: the benchmark itself is performed by merging the tool metrics with the rest of TCGA data. The results are provided in JSON format and SVG format (scatter plot).
 
-![workflow](workflow.jpg)
+![workflow](workflow_squema.JPG)
 
 
 ## Data
