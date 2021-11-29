@@ -11,7 +11,7 @@ The workflow takes an input file with Cancer Driver Genes predictions (i.e. the 
 2. **Metrics Generation**: the predictions are compared with the 'Gold Standards' provided by the community, which results in two performance metrics - precision (Positive Predictive Value) and recall(True Positive Rate).
 3. **Consolidation**: the benchmark itself is performed by merging the tool metrics with the rest of TCGA data. The results are provided in JSON format and SVG format (scatter plot).
 
-![workflow](workflow_squema.JPG)
+![workflow](workflow_schema.JPG)
 
 
 ## Data
