@@ -66,7 +66,7 @@ In the case of docker, apart from being installed the daemon has to be running. 
 ```
 
 ### Download workflow
-Simply clone the repository and check out the latest tag (currently `1.0.7`):
+Simply clone the repository and check out the latest tag (currently `1.0.8`):
 
 ```
 # Clone repository
